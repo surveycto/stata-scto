@@ -1,0 +1,3 @@
+v 0.1
+d SurveyCTO, sales@surveycto.com
+p A Package of Stata tools in relation to data collection using SurveyCTO

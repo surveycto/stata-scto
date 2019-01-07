@@ -1,0 +1,9 @@
+v 0.1
+d SurveyCTO, sales@surveycto.com
+d A Package of Stata tools in relation to data collection using SurveyCTO
+f /ado/sctofunctions.txt
+f /ado/sctostreamcsv.ado
+f /ado/sctostreamsum.ado
+f /help/sctostreamcsv.sthlp
+f /help/sctostreamsum.sthlp
+e
