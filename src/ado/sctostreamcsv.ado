@@ -135,6 +135,31 @@ qui {
 		}
 	}
 
+
+	*******************************************
+	*
+	*	Create list of files that are already
+	*   outputted, these files will be skipped.
+	*   If option replace is used, then this
+	*   list will be empty so that no files
+	*   will be skipped.
+	*
+	*******************************************
+
+
+	*List all outputted files for each sensor_stream
+	foreach sensorPrefix of local sensors {
+
+		if "`replace'" == "" {
+			*List of all files already outputted for this Sensor, all these files will be skipped
+			local outcvs`sensorPrefix' : dir "`outputfolder'" files "`sensorPrefix'_*.csv" , respectcase
+		}
+		else {
+			*Replace is used, make sure that the list is empty so that no files are skipped
+			local outcvs`sensorPrefix' ""
+		}
+	}
+
 	*******************************************
 	*
 	*	Prepare and run the calculations for all files in each sensor
@@ -172,11 +197,8 @@ qui {
 
 
 		********************************
-		* Loop over all files for this sensor_stream
-		* and prepare the stats
-
-		*List of all files already outputted for this Sensor. Used to speed up re-running this command as data comes in
-		local outcvs`sensorPrefix' : dir "`outputfolder'" files "`sensorPrefix'_*.csv" , respectcase
+		* Loop over all files for this sensor_stream,
+		* add the stats, and then output the file
 
 		*Counter for showing progress in result window
 		local counter 0
@@ -187,9 +209,8 @@ qui {
 			*Output progress in result window
 			local ++counter
 
-
-			*Test if file has already been outputted, and if so, if it should be replaced
-			if (`:list filecsv in outcvs`sensorPrefix'' & "`replace'" == "") {
+			*Test if file has already been outputted, and if so, if it should be replaced. If replc
+			if (`:list filecsv in outcvs`sensorPrefix'') {
 
 				noi di "{pstd}File `counter' out of `count_files`sensorPrefix'' `sensorPrefix' files already exist and is skipped.{p_end}"
 			}
