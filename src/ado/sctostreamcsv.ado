@@ -124,10 +124,10 @@ qui {
 		*Throw error if no files exist for the stream requred given stats options specified
 		if `count_files`sensorPrefix'' == 0 {
 
-			if "`sensorPrefix'" == LL local errorstring "the option {inp:llbetween()}"
-			if "`sensorPrefix'" == LL local errorstring "either of the options {inp:slbetween()} or {inp:quiet}"
-			if "`sensorPrefix'" == SP local errorstring "the option {inp:spbetween()}"
-			if "`sensorPrefix'" == MV local errorstring "either of the options {inp:mvbetween()}, {inp:still} or {inp:moving}"
+			if "`sensorPrefix'" == "LL" local errorstring "the option {inp:llbetween()}"
+			if "`sensorPrefix'" == "SL" local errorstring "either of the options {inp:slbetween()} or {inp:quiet}"
+			if "`sensorPrefix'" == "SP" local errorstring "the option {inp:spbetween()}"
+			if "`sensorPrefix'" == "MV" local errorstring "either of the options {inp:mvbetween()}, {inp:still} or {inp:moving}"
 
 			di as error "{phang}There are no files with the sensor prefix `sensorPrefix' in the outputfolder() and those file are needed when using `errorstring'.{p_end}"
 			error 198
