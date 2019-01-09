@@ -25,7 +25,7 @@
 	copy "${ado}/sctostreamcsv.ado" "C:/ado/plus/s/sctostreamcsv.ado", replace
 
 	*Create the folders needed in the output folder if they do not already exist
-	foreach datafolder in data_1 data_2 data_3 {
+	foreach datafolder in data_1 data_2 data_3 data_4 {
 		mata : st_numscalar("r(dirExist)", direxists("${outfolder}/`datafolder'"))
 		if `r(dirExist)' == 0 {
 		    mkdir "${outfolder}/`datafolder'"
@@ -34,7 +34,7 @@
 
 ***************************************
 
-
+/*
 	*Run tests on data 1.
 	local data data_1
 
@@ -74,6 +74,26 @@
 
 	*Run tests on data 3.
 	local data data_3
+
+	*This data set has two time periods for sound pitch. 1 second and 10 seconds
+	*This data does not have all stream files for all observations. Not all has MV sensors, not all has both 1 sec and 10 sec etc.
+
+	*Run the command. Comment in the options.
+	sctostreamsum , 	mediafolder("${testfolder}/`data'/media")  ///
+						outputfolder("${outfolder}/`data'")	 ///
+						llbetween(lightbetween[100 1000])  ///
+						sensors("SL sp MV")
+
+
+	*Run the command. Comment in the options.
+	sctostreamcsv , 	mediafolder("${testfolder}/`data'/media")  ///
+						outputfolder("${outfolder}/`data'")	 ///
+						spbetween(highpitch[100 ?])
+*/
+***************************************
+
+	*Run tests on data 4.
+	local data data_4
 
 	*This data set has two time periods for sound pitch. 1 second and 10 seconds
 	*This data does not have all stream files for all observations. Not all has MV sensors, not all has both 1 sec and 10 sec etc.
