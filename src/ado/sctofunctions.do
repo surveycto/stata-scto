@@ -366,8 +366,7 @@ cap program drop 	parsebetween
 
 	*Return the number of between categories and the updated list of used names
 	return local btwncount `counter'
-	return local btwnnames = trim("`catvarnames'")
+	return local btwnnames = itrim(trim("`catvarnames'"))
 	return local usednames "`usednames'"
-
 
 end
