@@ -26,14 +26,14 @@ qui {
 		]
 
 	//noi di "syntax ok"
-	pause on
 
 	preserve
 	clear
 
 	*******************************************
 	*
-	*	Import SCTO functions
+	*	Import SCTO functions shared with other
+	*   commands in this package from sctofunctions.do
 	*
 	*	This section emulates what the import
 	*	command does in f.ex. javascrip, python etc.
@@ -48,8 +48,7 @@ qui {
 	}
 	else {
 		*File does not exist
-		noi di as error "Reinstall package"
-		// Say that the package should be re-installed using ssc intall sctotools
+		noi di as error "{pstd}The {it:scto} package is not installed correctly. Type {inp:ssc install scto, replace} to reinstall the package, or go to {browse "https://github.com/kbjarkefur/scto":this package GitHub repository} for other options to re-install the package.{p_end}"
 		error 198
 		exit
 	}
@@ -80,9 +79,14 @@ qui {
 
 	*******************************************
 	*
-	*	Create a list of the sensors needed
+	*	Create a list of the sensors streams that
+	*   must exist given the stats the user have
+	*   requested the command to create
 	*
 	*******************************************
+
+	*Start by resetting locals
+	local sensors ""
 
 	if "`llbetween'" != ""							 local sensors "`sensors' LL"
 	if "`slbetween'" != "" | "`quiet'" != ""		 local sensors "`sensors' SL"
@@ -93,7 +97,7 @@ qui {
 	*  throws an error as that does not make sense for what this command is intended for.
 	if "`sensors'" == "" {
 
-		di as error "{phang}At least one stats option must be used. See the help file for possible stats options you can use.{p_end}"
+		di as error "{phang}You must specify at least one statistic to be calculated, otherwise there is no point of running this command. See the help file for possible stats options you can use.{p_end}"
 		error 198
 		exit
 	}
@@ -101,7 +105,9 @@ qui {
 
 	*******************************************
 	*
-	*	Create list of files required for the sensors used
+	*	Create list of files required for the sensors
+	*   used. Sensor stream files that are not required
+	*   for the stats the user have requested will be skipped.
 	*
 	*******************************************
 
@@ -118,10 +124,10 @@ qui {
 		*Throw error if no files exist for the stream requred given stats options specified
 		if `count_files`sensorPrefix'' == 0 {
 
-			if "`sensorPrefix'" == LL local errorstring "the option llbetween()"
-			if "`sensorPrefix'" == LL local errorstring "either of the options slbetween() or quiet"
-			if "`sensorPrefix'" == SP local errorstring "the option spbetween()"
-			if "`sensorPrefix'" == MV local errorstring "either of the options mvbetween(), still or moving"
+			if "`sensorPrefix'" == LL local errorstring "the option {inp:llbetween()}"
+			if "`sensorPrefix'" == LL local errorstring "either of the options {inp:slbetween()} or {inp:quiet}"
+			if "`sensorPrefix'" == SP local errorstring "the option {inp:spbetween()}"
+			if "`sensorPrefix'" == MV local errorstring "either of the options {inp:mvbetween()}, {inp:still} or {inp:moving}"
 
 			di as error "{phang}There are no files with the sensor prefix `sensorPrefix' in the outputfolder() and those file are needed when using `errorstring'.{p_end}"
 			error 198
@@ -144,20 +150,24 @@ qui {
 		*Create a lower case version of the prefix local
 		local lowCase_prefix	= lower("`sensorPrefix'")
 
-		*Make a local with which standardized category options that were used
+		*Create a list of the standardized category options that will be used for this sensor
+		local calcoptions "" //reset for each sensor
+		*Sound level
 		if "`sensorPrefix'" == "SL" & "`quiet'"  != "" local calcoptions "`calcoptions' quiet"
+		*Movement
 		if "`sensorPrefix'" == "MV" & "`still'"  != "" local calcoptions "`calcoptions' still"
 		if "`sensorPrefix'" == "MV" & "`moving'" != "" local calcoptions "`calcoptions' moving"
 
-		local btwnstr ""
-		*If the between option is used for this prefix then
+
+		*If the between() option is used for this prefix then parse the string passed in that option
+		local btwnstr "" // Start by resetting the local for each senso
 		if "``lowCase_prefix'between'" != "" {
 
 			*Parse the string for this option and generate and test the new varname and the conditional equation based on the min and max values used
 			parsebetween , prefix(`lowCase_prefix') between_options("``lowCase_prefix'between'") usednames("`usednames'")
 
 			*Store the number of categories
-			local btwnstr 	"`r(btwn`count')'"
+			local btwnstr 	"`r(btwn)'" //A string where each var is listed on this format: varname[mean < 25 & mean > 35 & !missing(mean)]
 		}
 
 
