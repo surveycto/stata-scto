@@ -34,7 +34,7 @@ cap program drop 	sctotestfolder
 		mata : st_numscalar("r(dirExist)", direxists("`folder`fNum''"))
 		if `r(dirExist)' == 0 {
 
-			noi di as error `"{phang}The `name`fNum''(`folder`fNum'') folder does not exist. You must enter the full path. For example, on most Windows computers it starts with {it:C:} and on most Mac computers with {it:/user/}.{p_end}"'
+			noi di as error `"{phang}The folder in `name`fNum''(`folder`fNum'') does not exist. You must enter the full path. For example, on most Windows computers it starts with {it:C:} and on most Mac computers with {it:/user/}.{p_end}"'
 			error 693
 			exit
 		}
