@@ -7,10 +7,16 @@
 
 ********************************************************************************/
 
+
+**Funtion to test that a folder exist. If two folders are passed as arguments, then
+* both are tested that they exist, in addition to testing that they are not the same folder.
 cap program drop 	sctotestfolder
 	program define 	sctotestfolder
 
-	syntax , folder1(string) name1(string) [folder2(string) name2(string)]
+	syntax , ///
+		folder1(string)  /// The folder path
+		name1(string) 	 /// The folder name to be used in the error message
+		[folder2(string) name2(string)] // Same as above but for optional second folder
 
 	di "sctotestfolder syntax ok"
 
@@ -168,7 +174,9 @@ cap program drop 	sctocalculatestats
 
 end
 
-
+**This function parse the strings that are passed as values in
+* the options llbetween(), mvbetween(), slbetween() and spbetween()
+* and turn them into code that makes sense to Stata.
 cap program drop 	parsebetween
 	program define 	parsebetween, rclass
 
@@ -353,7 +361,7 @@ cap program drop 	parsebetween
 		local btwn_list = trim(substr("`btwn_list'", `closeindex' + 1 , .))
 	}
 
-	*Return a srting to be parsed where each var is on format: varname[mean < 25 & mean > 35 & !missing(mean)]
+	*Return a string to be parsed where each var is on format: varname[mean < 25 & mean > 35 & !missing(mean)]
 	return local btwn "`btwn'"
 
 	*Return the number of between categories and the updated list of used names
