@@ -294,6 +294,9 @@ qui {
 			*Output progress in result window
 			local ++counter
 
+			*Test that the file name is on expected format
+			test_file_name , filename("`filecsv'")
+
 			*Get file from file key. Do not process this csv file if this obs have already been processed
 			local filekey = "uuid:" + substr("`filecsv'", 4,36)
 

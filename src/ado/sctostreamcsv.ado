@@ -218,6 +218,9 @@ qui {
 
 				noi di "{pstd}Reading file `counter' out of `count_files`sensorPrefix'' `sensorPrefix' files.{p_end}"
 
+				*Test that the file name is on expected format
+				test_file_name , filename("`filecsv'")
+
 				*Reads the csv file and adds the statistics
 				sctocalculatestats, file("`mediafolder'/`filecsv'") btwnstr("`btwnstr'") csv `keyvar' `calcoptions'
 
