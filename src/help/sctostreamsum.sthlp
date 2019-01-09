@@ -13,7 +13,7 @@ help for {hi:sctostreamsum}
 {phang2} {cmdab:sctostreamsum} ,
 		{cmdab:media:folder(}{it:folder_path}{cmd:)} {cmdab:output:folder(}{it:folder_path}{cmd:)}
 	[
-		{cmdab:sensors(}{it:string}{cmd:)} {cmdab:replace} {cmdab:quiet} {cmdab:still} {cmdab:moving}
+		{cmdab:sen:sors(}{it:string}{cmd:)} {cmdab:replace} {cmdab:quiet} {cmdab:still} {cmdab:moving}
 		{cmdab:llbet:ween(}{it:string}{cmd:)} {cmdab:slbet:ween(}{it:string}{cmd:)}
 		{cmdab:spbet:ween(}{it:string}{cmd:)} {cmdab:mvbet:ween(}{it:string}{cmd:)}
 	]{p_end}

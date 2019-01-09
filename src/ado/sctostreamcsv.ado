@@ -5,8 +5,8 @@ cap program drop 	sctostreamcsv
 qui {
 	syntax , 								///
 		/*required options*/				///
-		mediafolder(string)					///
-		outputfolder(string)				///
+		MEDIAfolder(string)					///
+		OUTPUTfolder(string)				///
 											///
 		/*optional options*/ 				///
 		[ 									///

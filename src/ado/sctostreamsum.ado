@@ -10,7 +10,7 @@ qui {
 											///
 		/*optional options*/ 				///
 		[ 									///
-		sensors(string) 					///
+		SENsors(string) 					///
 		replace								///
 											///
 		/*pct_categories equivalences*/		///
