@@ -61,14 +61,14 @@ help for {hi:sctostreamsum}
 {p2colset 8 22 26 4}{...}
 {p2col:Name}Description{p_end}
 {p2line}
-{p2col:mean}The mean of all time period means. In each time period there are more than one raw sensor recording. This is the mean of the time period means, not the mean of the raw recordings. The raw recordings are not with exact frequency, so it is only by making uniform time period means that all rows in the sensor stream output represents the same duration and therefore is comparable. {p_end}
-{p2col:period}The sensor streams observation period length. Default if not explicitly specified in the questionnaire form definition is period=1.{p_end}
-{p2col:uniform_obs}Number of uniform time period observations. As in the number of rows in the sensor stream, if period=1 then each row is a second.{p_end}
-{p2col:raw_obs}Number of raw recordings. Unless the time period for the sensor stream is set to 0 in the questionnaire form, each uniform time period is made up of many sensor recordings. This is the total number of raw sensor recordings.{p_end}
-{p2col:min}The minimum of all uniform time period means. Note that this is not the lowest value recorded, it is the lowest uniform time period mean.{p_end}
-{p2col:max}The maximum of all uniform time period means. Note that this is not the highest value recorded, it is the highest uniform time period mean.{p_end}
-{p2col:sd}The standard deviation of all uniform time period means.{p_end}
-{p2col:median}The median of all uniform time period means.{p_end}
+{p2col:mean}The mean of all time period means. Each row in the .csv file is based on more than one raw sensor recording. The value in the variable {it:mean} in the .csv file is the mean of those raw recordings. The basic statistics {it:mean} calculated by this command is the mean of all those means.{p_end}
+{p2col:period}The period length (in seconds) used for each row in the .csv file. Default if not explicitly specified in the questionnaire form definition is period=1.{p_end}
+{p2col:period_obs}Number of time periods (i.e. rows) in the .csv file. If the period is 1, then this is the duration of the interview in seconds.{p_end}
+{p2col:raw_obs}Number of raw recordings of the stream. Unless the time period for the sensor stream is set to 0 in the questionnaire form, each time period is made up of many raw sensor recordings. This is the total number of raw sensor recordings.{p_end}
+{p2col:min}The minimum of all time period means. Note that this is not the lowest raw recording, it is the lowest time period mean.{p_end}
+{p2col:max}The maximum of all time period means. Note that this is not the highest raw recording, it is the highest time period mean.{p_end}
+{p2col:sd}The standard deviation of all time period means.{p_end}
+{p2col:median}The median of all time period means.{p_end}
 {p2line}
 
 {marker optslong}
