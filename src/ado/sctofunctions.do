@@ -60,11 +60,10 @@ cap program drop 	test_file_name
 
 		if (regexm("`filename'","[A-Z][A-Z]_[a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9]-[a-z0-9][a-z0-9][a-z0-9][a-z0-9]-[a-z0-9][a-z0-9][a-z0-9][a-z0-9]-[a-z0-9][a-z0-9][a-z0-9][a-z0-9]-[a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9]_PERIOD_[a-z0-9]+.csv") != 1) {
 
-			noi di as error `"{phang}The file name [`filename'] is not on the expected format. the format SurveyCTO's server gives to these filem names are [XX_xxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_PERIOD_0+.csv] where X is any upper case letter, x is any lower case letter or any digit, and 0+ any number of digitis.{p_end}"'
+			noi di as error `"{phang}The file name [`filename'] is not on the expected format. the format SurveyCTO's server gives to these filem names are [XX_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx_PERIOD_0+.csv] where X is any upper case letter, x is any lower case letter or any digit, and 0+ any number of digitis.{p_end}"'
 			error 693
 			exit
 		}
-
 	}
 
 end
