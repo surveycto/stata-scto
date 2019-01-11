@@ -318,7 +318,7 @@ qui {
 				sctocalculatestats, file("`mediafolder'/`filecsv'") btwnstr("`btwnstr'") dta `calcoptions'
 
 				*Collapse to get similar stats as in sensor_statistics
-				collapse 	(count)		`sensorPrefix'_uniform_obs	= count				///
+				collapse 	(count)		`sensorPrefix'_period_obs	= count				///
 							(sum) 		`sensorPrefix'_raw_obs		= count				///
 							(min) 		`sensorPrefix'_min 			= min				///
 							(max) 		`sensorPrefix'_max 			= max				///
@@ -329,19 +329,19 @@ qui {
 							`catvars' , by(key)
 
 				*Label default vars
-				label var `sensorPrefix'_mean 			"The mean of all uniform time period means in `sensor_level`sensorPrefix''"
+				label var `sensorPrefix'_mean 			"The mean of all time period means in `sensor_level`sensorPrefix''"
 				label var `sensorPrefix'_period 		"The sensor streams observation length in `sensor_level`sensorPrefix''"
-				label var `sensorPrefix'_uniform_obs 	"Number of uniform time period observations for `sensor_level`sensorPrefix''"
+				label var `sensorPrefix'_period_obs 	"Number of time period observations for `sensor_level`sensorPrefix''"
 				label var `sensorPrefix'_raw_obs 		"Number of raw recordings for `sensor_level`sensorPrefix''"
-				label var `sensorPrefix'_min 			"The minimum of all uniform time period means in `sensor_level`sensorPrefix''"
-				label var `sensorPrefix'_max			"The maximum of all uniform time period means in `sensor_level`sensorPrefix''"
-				label var `sensorPrefix'_sd				"The standard deviation of all uniform time period means in `sensor_level`sensorPrefix''"
-				label var `sensorPrefix'_median			"The median of all uniform time period means in `sensor_level`sensorPrefix''"
+				label var `sensorPrefix'_min 			"The minimum of all time period means in `sensor_level`sensorPrefix''"
+				label var `sensorPrefix'_max			"The maximum of all time period means in `sensor_level`sensorPrefix''"
+				label var `sensorPrefix'_sd				"The standard deviation of all time period means in `sensor_level`sensorPrefix''"
+				label var `sensorPrefix'_median			"The median of all time period means in `sensor_level`sensorPrefix''"
 
 				*Label pct_categories vars
-				if `:list posof "pct_quiet" in calcoptions'  label var pct_quiet 	"% (in decimals) of quiet uniformed time periods in `sensor_level`sensorPrefix''"
-				if `:list posof "pct_still" in calcoptions'  label var pct_still 	"% (in decimals) of still uniformed time periods in `sensor_level`sensorPrefix''"
-				if `:list posof "pct_moving" in calcoptions' label var pct_moving 	"% (in decimals) of moving uniformed time periods in `sensor_level`sensorPrefix''"
+				if `:list posof "pct_quiet" in calcoptions'  label var pct_quiet 	"% (in decimals) of quiet time periods in `sensor_level`sensorPrefix''"
+				if `:list posof "pct_still" in calcoptions'  label var pct_still 	"% (in decimals) of still time periods in `sensor_level`sensorPrefix''"
+				if `:list posof "pct_moving" in calcoptions' label var pct_moving 	"% (in decimals) of moving time periods in `sensor_level`sensorPrefix''"
 
 				*Loop over each between var and label them. If no between vars, then btwncount is 0.
 				forvalues btwnnum = 1/`btwncount' {
