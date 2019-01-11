@@ -34,7 +34,7 @@
 
 ***************************************
 
-/*
+
 	*Run tests on data 1.
 	local data data_1
 
@@ -89,7 +89,7 @@
 	sctostreamcsv , 	mediafolder("${testfolder}/`data'/media")  ///
 						outputfolder("${outfolder}/`data'")	 ///
 						spbetween(highpitch[100 ?])
-*/
+
 ***************************************
 
 	*Run tests on data 4.
@@ -101,11 +101,10 @@
 	*Run the command. Comment in the options.
 	sctostreamsum , 	mediafolder("${testfolder}/`data'/media")  ///
 						outputfolder("${outfolder}/`data'")	 ///
-						llbetween(lightbetween[100 1000])  ///
-						sensors("SL sp MV")
+						spbetween(highpitch[100 ?]) replace
 
 
 	*Run the command. Comment in the options.
 	sctostreamcsv , 	mediafolder("${testfolder}/`data'/media")  ///
 						outputfolder("${outfolder}/`data'")	 ///
-						spbetween(highpitch[100 ?])
+						spbetween(highpitch[100 ?]) replace
