@@ -71,13 +71,15 @@ end
 cap program drop 	sctocalculatestats
 	program define 	sctocalculatestats, rclass
 
-
 		syntax, file(string) [ btwnstr(string) quiet still moving dta csv keyvar]
 
 			noi di "sctocalculatestats syntax ok!"
 
 			*Import file data
 			import delimited "`file'", clear
+
+			*Test that the sensor stream file is on acceptable format
+			test_data_format, filename("`file'")
 
 			*The list of expected variables each sensor_stream data set
 			local expected_varlist second count mean min max sd fieldname
@@ -190,6 +192,42 @@ cap program drop 	sctocalculatestats
 			}
 
 end
+
+** Test that the file has the correct format
+cap program drop 	test_data_format
+	program define 	test_data_format, rclass
+
+	syntax , filename(string)
+
+
+	****************************
+	* Test that all expected variables exist
+
+	*Create a list of all variables in the choice sheet
+	ds
+	local vars_in_this_file `r(varlist)'
+
+	local expected_vars "second count mean min max sd fieldname"
+
+	*Test that all required vars are actually in the survey sheets
+	if `: list expected_vars in vars_in_this_file' == 0 {
+
+		*Generate a list of the vars missing and display error
+		local missing_vars : list expected_vars - vars_in_this_file
+		noi di as error "{phang}The file [`filename'] does not have all the variables required. The variable(s) [`missing_vars'] are missing. Either download the file again, or remove the file.{p_end}"
+		error 688
+	}
+
+	****************************
+	* Test that there are observations in the data set
+	if _N == 0 {
+		noi di as error "{phang}The file [`filename'] does not have any observations. Either download the file again, or remove the file.{p_end}"
+		error 688
+	}
+
+end
+
+
 
 **This function parse the strings that are passed as values in
 * the options llbetween(), mvbetween(), slbetween() and spbetween()
