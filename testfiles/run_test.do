@@ -23,7 +23,12 @@
 	copy "${ado}/sctofunctions.do"  "C:/ado/plus/s/sctofunctions.do" , replace
 	copy "${ado}/sctostreamsum.ado" "C:/ado/plus/s/sctostreamsum.ado", replace
 	copy "${ado}/sctostreamcsv.ado" "C:/ado/plus/s/sctostreamcsv.ado", replace
+	
+	*Copy help files so they can be accessed by typing -help sctostreamsum-
+	copy "${scto_repo}/src/help/sctostreamsum.sthlp" "C:/ado/plus/s/sctostreamsum.sthlp", replace
+	copy "${scto_repo}/src/help/sctostreamcsv.sthlp" "C:/ado/plus/s/sctostreamcsv.sthlp", replace
 
+	
 	*Create the folders needed in the output folder if they do not already exist
 	foreach datafolder in data_1 data_2 data_3 data_4 {
 		mata : st_numscalar("r(dirExist)", direxists("${outfolder}/`datafolder'"))
