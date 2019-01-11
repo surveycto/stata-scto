@@ -36,9 +36,16 @@
 		    mkdir "${outfolder}/`datafolder'"
 		}
 	}
-
+	
+	*Use locals to enable/disable which tests to run.
+	local run_data_1 1
+	local run_data_2 1
+	local run_data_3 1
+	local run_data_4 1
+	
 ***************************************
 
+if `run_data_1' == 1 {
 
 	*Run tests on data 1.
 	local data data_1
@@ -54,8 +61,12 @@
 	sctostreamcsv , 	mediafolder("${testfolder}/`data'/media")  ///
 						outputfolder("${outfolder}/`data'")	 ///
 						llbetween(lightbetween[100 1000])
+						
+}
 
 ***************************************
+
+if `run_data_2' == 1 {
 
 	*Run tests on data 2.
 	local data data_2
@@ -73,9 +84,12 @@
 	sctostreamcsv , 	mediafolder("${testfolder}/`data'/media")  ///
 						outputfolder("${outfolder}/`data'")	 ///
 						spbetween(highpitch[100 ?])
-
+						
+}
 
 ***************************************
+
+if `run_data_3' == 1 {
 
 	*Run tests on data 3.
 	local data data_3
@@ -94,8 +108,12 @@
 	sctostreamcsv , 	mediafolder("${testfolder}/`data'/media")  ///
 						outputfolder("${outfolder}/`data'")	 ///
 						spbetween(highpitch[100 ?])
+						
+}
 
 ***************************************
+
+if `run_data_4' == 1 {
 
 	*Run tests on data 4.
 	local data data_4
@@ -113,3 +131,5 @@
 	sctostreamcsv , 	mediafolder("${testfolder}/`data'/media")  ///
 						outputfolder("${outfolder}/`data'")	 ///
 						spbetween(highpitch[100 ?]) replace
+
+}
