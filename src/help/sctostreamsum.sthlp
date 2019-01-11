@@ -78,9 +78,9 @@ help for {hi:sctostreamsum}
 {title:Options}
 
 {pstd}{it:{ul:{hi:Required options:}}}{p_end}
-{phang}{cmdab:media:folder(}{it:string}{cmd:)} indicates where the .csv files exported from the SurveyCTO server are saved. This is called the media folder becasue that is the name of the folder SurveyCTO Sync save these files. Other files not relevant to this commands may also be stored in this folder as this command can tell which files are sensor stream files based on the file name.{p_end}
+{phang}{cmdab:media:folder(}{it:string}{cmd:)} indicates where the .csv files exported from the SurveyCTO server are saved. This is called the media folder because that is the name of the folder where SurveyCTO Sync saves these files. Other files not relevant to this commands may also be stored in this folder as this command can tell which files are sensor stream files based on the file name.{p_end}
 
-{phang}{cmdab:output:folder(}{it:string}{cmd:)} indicates where the .dta file will be saved. This folder must not be the same folder as the folder in {cmdab:media:folder()}. If the .dta file already exists there, then only files in the media folder with a key not already in the .dta file will be processed and appended to the already existing file (unless option {cmd:replace} is used).{p_end}
+{phang}{cmdab:output:folder(}{it:string}{cmd:)} indicates where the .dta file will be saved. This folder may not be the same folder as the folder in {cmdab:media:folder()}. If the .dta file already exists there, then only files in the media folder with a key not already in the .dta file will be processed and appended to the already existing file (unless option {cmd:replace} is used).{p_end}
 
 {pstd}{it:{ul:{hi:Output options:}}}{p_end}
 {phang}{cmdab:sen:sors(}{it:string}{cmd:)} lists all the sensor streams to calculate basic statistics on. If a sensor specific statistic is already specified then there is no need to also specify it here as basic statistics will also be calculated, but it will not cause an error. For each sensor listed here there must be at least one sensor stream .csv file in the media folder.{p_end}
@@ -96,15 +96,15 @@ help for {hi:sctostreamsum}
 
 {pstd}{it:{ul:{hi:Customizable Statistics options:}}}{p_end}
 
-{pstd}All of the following commands take a {inp:{it:range_string}} as value. The {it:range_string} is used to indicate the name of the new variable this command should create and the range that this command will use to calculate the percentage (in decimal points) of time periods that the sensor was within that range. Each new variable in the {it:range_string} is specified like this: {inp:{it:varname}({it:min max})}, where {it:varname} is the name of the new variable to be created, and {it:min} and {it:max} are the lower and upper boundaries for the range. Round brackets indicate that the boundary is exclusive, and straight bracket is inclusive. One of min and max can be replaced with a question mark to have a greater-than or less-than expression instead of a range. Multiple new variables can be specified in the same {it:range_string}. See examples below. {p_end}
+{pstd}All of the following options take a {inp:{it:range_string}} as value. The {it:range_string} is used to indicate the name of the new variable this command should create and the range that this command will use to calculate the percentage (in decimal points) of time periods that the sensor was within that range. Each new variable in the {it:range_string} is specified like this: {inp:{it:varname}({it:min max})}, where {it:varname} is the name of the new variable to be created, and {it:min} and {it:max} are the lower and upper boundaries for the range. Round brackets indicate that the boundary is exclusive, and straight bracket is inclusive. One of min and max can be replaced with a question mark to have a greater-than or less-than expression instead of a range. Multiple new variables can be specified in the same {it:range_string}. See examples below. {p_end}
 
-{phang}{cmdab:llbet:ween(}{it:range_string}{cmd:)} allows the user to manually specified statistics for the light level stream. See documentation on the {it:range_string} above and examples below. An error will be generated if this option is used and no light level sensor stream files exist in the {cmdab:media:folder()} folder.{p_end}
+{phang}{cmdab:llbet:ween(}{it:range_string}{cmd:)} allows the user to manually specify statistics for the light level stream. See documentation on the {it:range_string} above and examples below. An error will be generated if this option is used and no light level sensor stream files exist in the {cmdab:media:folder()} folder.{p_end}
 
-{phang}{cmdab:slbet:ween(}{it:range_string}{cmd:)} allows the user to manually specified statistics for the sound level stream. See documentation on the {it:range_string} above and examples below. An error will be generated if this option is used and no sound level sensor stream files exist in the {cmdab:media:folder()} folder.{p_end}
+{phang}{cmdab:slbet:ween(}{it:range_string}{cmd:)} allows the user to manually specify statistics for the sound level stream. See documentation on the {it:range_string} above and examples below. An error will be generated if this option is used and no sound level sensor stream files exist in the {cmdab:media:folder()} folder.{p_end}
 
-{phang}{cmdab:spbet:ween(}{it:range_string}{cmd:)} allows the user to manually specified statistics for the sound pitch stream. See documentation on the {it:range_string} above and examples below. An error will be generated if this option is used and no sound pitch sensor stream files exist in the {cmdab:media:folder()} folder.{p_end}
+{phang}{cmdab:spbet:ween(}{it:range_string}{cmd:)} allows the user to manually specify statistics for the sound pitch stream. See documentation on the {it:range_string} above and examples below. An error will be generated if this option is used and no sound pitch sensor stream files exist in the {cmdab:media:folder()} folder.{p_end}
 
-{phang}{cmdab:mvbet:ween(}{it:range_string}{cmd:)} allows the user to manually specified statistics for the movement stream. See documentation on the {it:range_string} above and examples below. An error will be generated if this option is used and no movement sensor stream files exist in the {cmdab:media:folder()} folder.{p_end}
+{phang}{cmdab:mvbet:ween(}{it:range_string}{cmd:)} allows the user to manually specify statistics for the movement stream. See documentation on the {it:range_string} above and examples below. An error will be generated if this option is used and no movement sensor stream files exist in the {cmdab:media:folder()} folder.{p_end}
 
 {pstd}{ul:range_string examples:}{p_end}
 
@@ -112,7 +112,7 @@ help for {hi:sctostreamsum}
 
 {phang}{inp:slbetween(}{it:quiet(? 25)}{inp:)} will create a variable from the sound level streams named {it:quiet} where the values are the percentage (in decimal points) of time periods where the mean sound level was below 25 dB (exclusive). This is identical to the variable created when using option {inp:quiet}. {p_end}
 
-{phang}{inp:mvbetween(}{it:mv1[.2 .25) mv2[1 ?]}{inp:)} will create two variables from the movement stream named {it:}mv1} and {it:mv2}. {it:mv1} is the percentage (in decimal points) of time periods where the mean movement was between .2  m/s^2 (inclusive) and .25 m/s^2 (exclusive). {it:mv2} is the percentage (in decimal points) of time periods where the mean movement was greater than 1  m/s^2 (exclusive).{p_end}
+{phang}{inp:mvbetween(}{it:mv1[.2 .25) mv2[1 ?]}{inp:)} will create two variables from the movement stream named {it:}mv1} and {it:mv2}. {it:mv1} is the percentage (in decimal points) of time periods where the mean movement was between .2 m/s^2 (inclusive) and .25 m/s^2 (exclusive). {it:mv2} is the percentage (in decimal points) of time periods where the mean movement was greater than 1 m/s^2 (exclusive).{p_end}
 
 {marker examples}
 {title:Examples}
@@ -139,4 +139,4 @@ help for {hi:sctostreamsum}
 
 {phang}This command is developed by {browse "https://www.surveycto.com/about/contact/":SurveyCTO}.{p_end}
 
-{phang}See this command's {browse "https://www.surveycto.com/about/contact/":repository} for more information where you can also submit feedback and feature requests.{p_end}
+{phang}See this command's {browse "https://github.com/kbjarkefur/scto":repository} for more information where you can also submit feedback and feature requests.{p_end}
