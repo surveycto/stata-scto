@@ -35,10 +35,10 @@ help for {hi:sctostreamcsv}
 {synopt :{cmdab:still}} Add a statistic indicating which time period the device was completely still. Requires movement sensor files.{p_end}
 movement
 {pstd}{it:Customizable Statistics options:}{p_end}
-{synopt :{cmdab:llbet:ween(}{it:string}{cmd:)}} Manually specified statistics for the light level stream.{p_end}
-{synopt :{cmdab:slbet:ween(}{it:string}{cmd:)}} Manually specified statistics for the sound level stream.{p_end}
-{synopt :{cmdab:spbet:ween(}{it:string}{cmd:)}} Manually specified statistics for the sound pitch stream.{p_end}
-{synopt :{cmdab:mvbet:ween(}{it:string}{cmd:)}} Manually specified statistics for the movement stream.{p_end}
+{synopt :{cmdab:llbet:ween(}{it:{help sctostreamcsv##customstats:range_string}}{cmd:)}} Manually specified statistics for the light level stream.{p_end}
+{synopt :{cmdab:slbet:ween(}{it:{help sctostreamcsv##customstats:range_string}}{cmd:)}} Manually specified statistics for the sound level stream.{p_end}
+{synopt :{cmdab:spbet:ween(}{it:{help sctostreamcsv##customstats:range_string}}{cmd:)}} Manually specified statistics for the sound pitch stream.{p_end}
+{synopt :{cmdab:mvbet:ween(}{it:{help sctostreamcsv##customstats:range_string}}{cmd:)}} Manually specified statistics for the movement stream.{p_end}
 
 {synoptline}
 
@@ -71,6 +71,7 @@ movement
 
 {phang}{cmdab:moving} adds a variable called {it:moving} to the any MV (movement) sensor stream .csv file. This variable will be 1 for all time periods for which the mean movement is greater than 2 m/s^2. For all other non-missing values this variable will be 0. An error will be generated if this option is used and no MV sensor file exist in the {cmdab:media:folder()} folder.{p_end}
 
+{marker customstats}
 {pstd}{it:{ul:{hi:Customizable Statistics options:}}}{p_end}
 
 {pstd}All of the following options take a {inp:{it:range_string}} as value. The {it:range_string} is used to indicate the name of the new variable this command should create and for which range this variable should be 1 for each time period. The new variable is 0 for all other non-missing values. Each new variable in the {it:range_string} is specified like this: {inp:{it:varname}({it:min max})}, where {it:varname} is the name of the new variable to be created, and {it:min} and {it:max} are the lower and upper boundaries for the range. Round brackets indicate that the boundary is exclusive, and straight bracket is inclusive. One of min and max can be replaced with a question mark to have a greater-than or less-than expression instead of a range. Multiple new variables can be specified in the same {it:range_string}. See examples below. {p_end}
