@@ -225,7 +225,7 @@ qui {
 				sctocalculatestats, file("`mediafolder'/`filecsv'") btwnstr("`btwnstr'") csv `keyvar' `calcoptions'
 
 				*Outsheet the csv file with the newly calculated stats
-				outsheet using "`outputfolder'/`filecsv'", replace
+				outsheet using "`outputfolder'/`filecsv'", replace comma
 
 				noi di "{pmore}Sensor statistics calculations were added to file `filecsv' which was then saved to the outputfolder().{p_end}"
 
