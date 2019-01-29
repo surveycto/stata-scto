@@ -121,6 +121,10 @@ if `run_data_4' == 1 {
 	*This data set has two time periods for sound pitch. 1 second and 10 seconds
 	*This data does not have all stream files for all observations. Not all has MV sensors, not all has both 1 sec and 10 sec etc.
 
+	**********************************************
+	** THESE FILES ARE EXPECTED TO RUN INTO ERRORS
+	**********************************************	
+	
 	*Run the command. Comment in the options.
 	sctostreamsum , 	mediafolder("${testfolder}/`data'/media")  ///
 						outputfolder("${outfolder}/`data'")	 ///
