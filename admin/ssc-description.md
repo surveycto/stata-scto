@@ -1,7 +1,7 @@
 # SSC Meta Description
 See instructions for the content in this file here: http://repec.org/bocode/s/sscsubmit.html
 
-This is the information that will show when typing `ssc describe scto` and on the ideas.repec.org page that will be created once we publish the first version. See, as an example, `ssc describe ietoolkit` and https://ideas.repec.org/c/boc/bocode/s458137.html.
+This is the information that will show when typing `ssc describe scto` in Stata and on the ideas.repec.org page that will be created once we publish the first version. See, as an example, `ssc describe ietoolkit` and https://ideas.repec.org/c/boc/bocode/s458137.html.
 
 When updating this information at any point in the future, send the content of the 4 sections (Description, Keywords, Required Stata Version and Author and Email) to Kit Baum when you are updating the package. Just copy the raw text to the body of the email.
 
