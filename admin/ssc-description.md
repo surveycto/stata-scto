@@ -3,11 +3,14 @@ See instructions for the content in this file here: http://repec.org/bocode/s/ss
 
 This is the information that will show when typing `ssc describe scto` in Stata and on the ideas.repec.org page that will be created once we publish the first version. See, as an example, `ssc describe ietoolkit` and https://ideas.repec.org/c/boc/bocode/s458137.html.
 
-When updating this information at any point in the future, send the content of the 4 sections (Description, Keywords, Required Stata Version and Author and Email) to Kit Baum when you are updating the package. Just copy the raw text to the body of the email.
+When updating this information at any point in the future, send the content of the 5 sections (Title, Description, Keywords, Required Stata Version and Author and Email) to Kit Baum when you are updating the package. Just copy the raw text to the body of the email.
 
 If you are not updating this meta information when updating the files in the `scto` package, then you do not have to submit this information with the files.
 
 ***
+
+### Title
+SCTO : utility functions for data collected using SurveyCTO
 
 ### Description
 The scto Stata package includes a set of utility functions related to data collected using SurveyCTO, www.surveycto.com. Currently the package includes two commands that both use sensor stream data files as input. Sensor stream data are recordings of light level, sound level and pitch, and movement during tablet assisted data collections. These commands take the sensor stream data and aggregate it so it can be merged with the main data, or calculate statistics for each time period throughout the interview. These commands are developed by the team at SurveyCTO.
