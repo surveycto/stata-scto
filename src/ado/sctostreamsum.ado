@@ -1,3 +1,4 @@
+*! version 1.0 31JAN2019 SurveyCTO sales@surveycto.com
 
 cap program drop 	sctostreamsum
 	program define 	sctostreamsum
@@ -24,6 +25,8 @@ qui {
 		SPBETween(string)					///
 		MVBETween(string)					///
 		]
+
+	version 13.0
 
 	clear
 

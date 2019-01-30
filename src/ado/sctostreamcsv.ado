@@ -1,3 +1,4 @@
+*! version 1.0 31JAN2019 SurveyCTO sales@surveycto.com
 
 cap program drop 	sctostreamcsv
 	program define 	sctostreamcsv
@@ -25,7 +26,7 @@ qui {
 		MVBETween(string)					///
 		]
 
-	//noi di "syntax ok"
+	version 13.0
 
 	preserve
 	clear

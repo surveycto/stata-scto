@@ -1,5 +1,5 @@
 {smcl}
-{* 19 Oct 2018}{...}
+{* 31 Jan 2019}{...}
 {hline}
 help for {hi:sctostreamcsv}
 {hline}
