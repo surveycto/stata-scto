@@ -1,13 +1,13 @@
 # Checklist for submitting new versions to SSC
 
-*Copy the list below to an issue when starting the process of publishing a new version of ietoolkit*
+*Copy the list below to an issue when starting the process of publishing a new version of this package, and tick of each step as it is completed*
 
 - [ ] 1. **Merge to *develop*** - Merge all branches with the changes that should be included in the new version first to the `master` branch.
 - [ ] 2. **Update version and date** - Update the version number and date in all ado-files and all dates in all help files. See section below for details.
 - [ ] 3. **Create a .zip file** - Create a .zip file with all ado-files and help files in the **ado** and **help**. Do not include the folders, just the files in those folders.
 - [ ] 4. **Email Prof. Baum** - Email the .zip file to kit.baum@bc.edu.
     - If any commands are added or deleted, make note of that in the email.
-    - If any meta information needs to be updated, include it according to the instructions here in that email.
+    - If any meta information needs to be updated, include it according to the [instructions here](https://github.com/kbjarkefur/scto/blob/master/admin/ssc-description.md) in that email.
 - [ ] 5. **Draft release note** - Go to the [release notes](https://github.com/kbjarkefur/scto/releases) and draft a new release note for the new version. Link to the issues [issues](https://github.com/kbjarkefur/scto/issues) solved in this release.
 - [ ] 6. **Wait for publication confirmation** - Do not proceed pass this step until Prof. Baum has confirmed that the new version is uploaded to the servers.
 - [ ] 7. **Publish release note** - Once the new version is up on SSC, publish the release note.
