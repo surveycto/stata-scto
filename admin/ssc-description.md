@@ -30,7 +30,7 @@ Stata 13
 
 ### Author and Email
 * Author: SurveyCTO
-* Support: email sales@surveycto.com
+* Support: email support@surveycto.com
 
 ***
 Do not send anything from below this line.
