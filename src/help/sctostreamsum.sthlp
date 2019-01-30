@@ -6,7 +6,7 @@ help for {hi:sctostreamsum}
 
 {title:Title}
 
-{phang2}{cmdab:sctostreamsum} {hline 2} This command calculates statistics from sensor stream files outputted during data collection using {browse "https://www.surveycto.com/":SurveyCTO} and summarizes them at the submission level in a .dta file so that they can be merged with the main data.
+{phang2}{cmdab:sctostreamsum} {hline 2} This command calculates statistics from sensor stream files outputted during data collection using {browse "https://www.surveycto.com/":SurveyCTO} and summarizes them at the submission level in a .dta file so that they can be merged with the main data.{p_end}
 
 {title:Syntax}
 
@@ -111,7 +111,7 @@ help for {hi:sctostreamsum}
 
 {phang}{inp:llbetween(}{it:indoors_lit(100 750)}{inp:)} will create a variable from the light level stream named {it:indoors_lit} where the values are the percentage (in decimal points) of time periods where the mean light level was between 100 lux (exclusive) and 750 lux (exclusive).{p_end}
 
-{phang}{inp:slbetween(}{it:quiet(? 25)}{inp:)} will create a variable from the sound level stream named {it:quiet} where the values are the percentage (in decimal points) of time periods where the mean sound level was below 25 dB (exclusive). This is identical to the variable created when using the option {inp:quiet}. {p_end}
+{phang}{inp:slbetween(}{it:quiet(? 25)}{inp:)} will create a variable from the sound level stream named {it:quiet} where the values are the percentage (in decimal points) of time periods where the mean sound level was below 25 dB (exclusive). This is identical to the variable created when using the option {inp:quiet}.{p_end}
 
 {phang}{inp:mvbetween(}{it:mv1[.2 .25) mv2[1 ?]}{inp:)} will create two variables from the movement stream named {it:mv1} and {it:mv2}. {it:mv1} is the percentage (in decimal points) of time periods where the mean movement was between .2 m/s^2 (inclusive) and .25 m/s^2 (exclusive). {it:mv2} is the percentage (in decimal points) of time periods where the mean movement was greater than 1 m/s^2 (inclusive).{p_end}
 
@@ -124,17 +124,17 @@ help for {hi:sctostreamsum}
 {pstd}{inp:global media "}$project\raw_data\media{inp:"}{p_end}
 {pstd}{inp:global output "}$project\outputs{inp:"}{p_end}
 
-{pstd} {hi:Example 1.}
+{pstd}{hi:Example 1.}{p_end}
 
-{pstd} {inp:sctostreamsum, mediafolder(}{it:"$media"}{inp:) outputfolder(}{it:"$output"}{inp:) quiet still}
+{pstd}{inp:sctostreamsum, mediafolder(}{it:"$media"}{inp:) outputfolder(}{it:"$output"}{inp:) quiet still}{p_end}
 
-{pstd}This is a very simple way to run the command. The command will read sensor stream .csv files in the media folder with the prefix SL (because {inp:quiet} was used) and the prefix MV (because {inp:still} was used) and create a .dta file with the key in variable {it:key}, the basic statistics for the sound level sensor under the {it:quiet} variable, and the basic statistics for the movement sensor under the {it:still} variable and save it in the output folder. If the command has already been run and the .dta already exists in the folder, then only submissions with a key not already in the .dta file will be processed and appended to the already existing file. Any sensor stream files with the prefix SP or LL in the media folder will be ignored as no statistic applicable to either of those streams was specified.
+{pstd}This is a very simple way to run the command. The command will read sensor stream .csv files in the media folder with the prefix SL (because {inp:quiet} was used) and the prefix MV (because {inp:still} was used) and create a .dta file with the key in variable {it:key}, the basic statistics for the sound level sensor under the {it:quiet} variable, and the basic statistics for the movement sensor under the {it:still} variable and save it in the output folder. If the command has already been run and the .dta already exists in the folder, then only submissions with a key not already in the .dta file will be processed and appended to the already existing file. Any sensor stream files with the prefix SP or LL in the media folder will be ignored as no statistic applicable to either of those streams was specified.{p_end}
 
-{pstd} {hi:Example 2.}
+{pstd}{hi:Example 2.}{p_end}
 
-{pstd} {inp:sctostreamsum, mediafolder(}{it:"$media"}{inp:) outputfolder(}{it:"$output"}{inp:) quiet slbetween(}{it:loud(60 ?)}{inp:) replace}
+{pstd}{inp:sctostreamsum, mediafolder(}{it:"$media"}{inp:) outputfolder(}{it:"$output"}{inp:) quiet slbetween(}{it:loud(60 ?)}{inp:) replace}{p_end}
 
-{pstd} In this example, the command will only read SL sensor stream .csv files from the media folder as sound level is the only sensor required by the statistics that are specified. Basic statistics will be calculated for the sound level stream, in addition to the {it:quiet} and {it:loud} variables. All SL files in the media folder will be included and the command will start over with a new .dta file, replacing the .dta file in the output folder if it already exists.
+{pstd}In this example, the command will only read SL sensor stream .csv files from the media folder as sound level is the only sensor required by the statistics that are specified. Basic statistics will be calculated for the sound level stream, in addition to the {it:quiet} and {it:loud} variables. All SL files in the media folder will be included and the command will start over with a new .dta file, replacing the .dta file in the output folder if it already exists.{p_end}
 
 {title:Author}
 
