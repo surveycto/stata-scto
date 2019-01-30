@@ -1,4 +1,4 @@
-*! version 1.0 31JAN2019 SurveyCTO sales@surveycto.com
+*! version 1.0 31JAN2019 SurveyCTO support@surveycto.com
 
 cap program drop 	sctostreamcsv
 	program define 	sctostreamcsv

@@ -5,9 +5,9 @@ This repo includes the code for commands that are developed by SurveyCTO and its
 ## Installation
 This pacakage requires Stata 13 or newer.
 
-**[NOT YET REALEASED]** The easiest way to install this package of commands and keep it up to date is to type `ssc install scto` in Stata. 
+**[NOT YET REALEASED]** The easiest way to install this package of commands and keep it up to date is to type `ssc install scto` in Stata.
 
-**[POSSIBLE ONCE REPO IS PUBLIC]** An alternative to SSC is to install this package directly from the files in this repository. If you want to install the version of the package in the master branch, simply use the code below. If you want to install the files from another branch than the master branch, simply replace _master_ in the URL below with the name of the branch you want to install from. 
+**[POSSIBLE ONCE REPO IS PUBLIC]** An alternative to SSC is to install this package directly from the files in this repository. If you want to install the version of the package in the master branch, simply use the code below. If you want to install the files from another branch than the master branch, simply replace _master_ in the URL below with the name of the branch you want to install from.
 ```
     cap net uninstall scto
     net install scto , from("https://raw.githubusercontent.com/kbjarkefur/scto/master/src") replace
@@ -31,4 +31,4 @@ Contributions and any type of feedback is welcomed. Please feel free to submit a
 The **scto** package is developed under MIT license. See http://adampritchard.mit-license.org/ or see [the `LICENSE` file](https://github.com/kbjarkefur/scto/blob/master/LICENSE) for details.
 
 ### **Main Contact**
-SurveyCTO ([info@surveycto.com](mailto:info@surveycto.com))
+SurveyCTO ([info@surveycto.com](mailto:support@surveycto.com))

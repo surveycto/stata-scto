@@ -19,7 +19,7 @@ The version number is on the format `number.number` where the first number is in
 
 Version number and date in ado-file. Change both version number and date. Make sure that this line is the very first line in the ado-file.
 ```
-*! version 1.0 31JAN2019  SurveyCTO sales@surveycto.com
+*! version 1.0 31JAN2019  SurveyCTO support@surveycto.com
 
 	capture program drop sctostreamsum
 	program sctostreamsum
