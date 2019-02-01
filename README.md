@@ -14,7 +14,7 @@ This package requires Stata 13 or newer.
 
 The easiest way to install this package of commands and keep it up to date is to type `ssc install scto` in Stata. Keep the files up to date by running `adoupdate` regularly, and follow the instructions if any of your installed packages are out of date.
 
-## Installation alternatives to SSC
+### Installation alternatives to SSC
 An alternative to SSC is to install this package directly from the files in this repository. This should not be the preferred method for most users as the only advantage of this method compared to `ssc install scto` is that it allows you to install a version of the _scto_ package from another branch in this repo where we are developing features not yet published on SSC. This is only relevant to users that are helping us to test out new features.
 
 If you want to install the version of the package in the master branch, simply use the code below. You rarely want to do that, as that is the same as installing the commands using `ssc install scto`. If you want to install the files from another branch than the master branch, simply replace _master_ in the URL below with the name of the branch you want to install from.
