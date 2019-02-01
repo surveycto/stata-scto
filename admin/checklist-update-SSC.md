@@ -8,7 +8,7 @@
 - [ ] 4. **Email Prof. Baum** - Email the .zip file to kit.baum@bc.edu.
     - If any commands are added or deleted, make note of that in the email.
     - If any meta information needs to be updated, include it according to the [instructions here](https://github.com/kbjarkefur/scto/blob/master/admin/ssc-description.md) in that email.
-- [ ] 5. **Draft release note** - Go to the [release notes](https://github.com/kbjarkefur/scto/releases) and draft a new release note for the new version. Link to the issues [issues](https://github.com/kbjarkefur/scto/issues) solved in this release.
+- [ ] 5. **Draft release note** - Go to the [release notes](https://github.com/surveycto/scto/releases) and draft a new release note for the new version. Link to the issues [issues](https://github.com/surveycto/scto/issues) solved in this release.
 - [ ] 6. **Wait for publication confirmation** - Do not proceed pass this step until Prof. Baum has confirmed that the new version is uploaded to the servers.
 - [ ] 7. **Publish release note** - Once the new version is up on SSC, publish the release note.
 - [ ] 8. **Close issues** - Close the issues which fix is now published on the SSC server.

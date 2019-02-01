@@ -47,7 +47,7 @@ qui {
 	}
 	else {
 		*File does not exist
-		noi di as error "{pstd}The {it:scto} package is not installed correctly. Type {inp:ssc install scto, replace} to reinstall the package, or go to {browse "https://github.com/kbjarkefur/scto":this package GitHub repository} for other options to re-install the package.{p_end}"
+		noi di as error "{pstd}The {it:scto} package is not installed correctly. Type {inp:ssc install scto, replace} to reinstall the package, or go to {browse "https://github.com/surveycto/scto":this package GitHub repository} for other options to re-install the package.{p_end}"
 		error 198
 		exit
 	}

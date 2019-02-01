@@ -117,4 +117,4 @@ help for {hi:sctostreamcsv}
 
 {phang}This command was developed by {browse "https://www.surveycto.com/about/contact/":SurveyCTO}.{p_end}
 
-{phang}See this command's {browse "https://github.com/kbjarkefur/scto":repository} for more information where you can also submit feedback and feature requests.{p_end}
+{phang}See this command's {browse "https://github.com/surveycto/scto":repository} for more information where you can also submit feedback and feature requests.{p_end}

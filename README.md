@@ -10,7 +10,7 @@ This pacakage requires Stata 13 or newer.
 **[POSSIBLE ONCE REPO IS PUBLIC]** An alternative to SSC is to install this package directly from the files in this repository. If you want to install the version of the package in the master branch, simply use the code below. If you want to install the files from another branch than the master branch, simply replace _master_ in the URL below with the name of the branch you want to install from.
 ```
     cap net uninstall scto
-    net install scto , from("https://raw.githubusercontent.com/kbjarkefur/scto/master/src") replace
+    net install scto , from("https://raw.githubusercontent.com/surveycto/scto/master/src") replace
 ```
 
 **[THIS WORKS ALREADY NOW]** If you are not able to run `net install` from your computer, then you can download a .zip file with the content of this repository, extract it, and then replace the URL with the file location of the _src_ folder where you extracted the content of the .zip file.
@@ -28,7 +28,7 @@ Contributions and any type of feedback is welcomed. Please feel free to submit a
 ---
 
 ### **License**
-The **scto** package is developed under MIT license. See http://adampritchard.mit-license.org/ or see [the `LICENSE` file](https://github.com/kbjarkefur/scto/blob/master/LICENSE) for details.
+The **scto** package is developed under MIT license. See http://adampritchard.mit-license.org/ or see [the `LICENSE` file](https://github.com/surveycto/scto/blob/master/LICENSE) for details.
 
 ### **Main Contact**
 SurveyCTO ([info@surveycto.com](mailto:support@surveycto.com))
