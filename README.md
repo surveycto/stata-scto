@@ -30,7 +30,7 @@ Contributions and any type of feedback is welcomed. Please feel free to submit a
 ---
 
 ### **License**
-The **scto** package is developed under MIT license. See http://adampritchard.mit-license.org/ or see [the `LICENSE` file](https://github.com/surveycto/scto/blob/master/LICENSE) for details.
+The **scto** package is developed under Apache License 2.0. See http://www.apache.org/licenses/LICENSE-2.0 or see [the `LICENSE` file](https://github.com/surveycto/scto/blob/master/LICENSE) for details.
 
 ### **Main Contact**
 SurveyCTO ([support@surveycto.com](mailto:support@surveycto.com))
