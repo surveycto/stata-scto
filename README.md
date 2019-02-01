@@ -1,26 +1,28 @@
 # Stata package with SurveyCTO related utility functions
 
-This repo includes the code for commands that are developed by SurveyCTO and its community of users.
-
-## Installation
-This pacakage requires Stata 13 or newer.
-
-**[NOT YET REALEASED]** The easiest way to install this package of commands and keep it up to date is to type `ssc install scto` in Stata.
-
-**[POSSIBLE ONCE REPO IS PUBLIC]** An alternative to SSC is to install this package directly from the files in this repository. If you want to install the version of the package in the master branch, simply use the code below. If you want to install the files from another branch than the master branch, simply replace _master_ in the URL below with the name of the branch you want to install from.
-```
-    cap net uninstall scto
-    net install scto , from("https://raw.githubusercontent.com/surveycto/scto/master/src") replace
-```
-
-**[THIS WORKS ALREADY NOW]** If you are not able to run `net install` from your computer, then you can download a .zip file with the content of this repository, extract it, and then replace the URL with the file location of the _src_ folder where you extracted the content of the .zip file.
+This repo Stata commands developed to work with data collected using [SurveyCTO](https://www.surveycto.com)'s data collection software.
 
 ## Content
 
 Currently there are two commands in this repo. Both of them are related to processing of sensor stream data outputted from SurveyCTO Surveys.
 
 * **sctostreamcsv** - reads sensor stream csv files and calculates statistics for each time period used when collecting the sensor stream. This command can be used to see which part of the questionnaire was done in a context that was quiet, dark etc.
-* **sctostreamsum** - reads sensor stream csv files and calculates statistics for each submission and saves them all in a .dta file that can merged with the main survey data.
+* **sctostreamsum** - reads sensor stream csv files and calculates statistics for each submission and saves them all in a .dta file that can merged with the main survey data. This allows you to get all the features from the *sensor_statistics* field even after the data collection as long as you used the *sensor_stream* field for the sensor you are interested in.
+
+## Installation
+This package requires Stata 13 or newer.
+
+The easiest way to install this package of commands and keep it up to date is to type `ssc install scto` in Stata. Keep the files up to date by running `adoupdate` regularly, and follow the instructions if any of your installed packages are out of date.
+
+## Installation alternatives to SSC
+An alternative to SSC is to install this package directly from the files in this repository. This should not be the preferred method for most users as the only advantage of this method compared to `ssc install scto` is that it allows you to install a version of the _scto_ package from another branch in this repo where we are developing features not yet published on SSC. This is only relevant to users that are helping us to test out new features.
+
+If you want to install the version of the package in the master branch, simply use the code below. You rarely want to do that, as that is the same as installing the commands using `ssc install scto`. If you want to install the files from another branch than the master branch, simply replace _master_ in the URL below with the name of the branch you want to install from.
+```
+    cap net uninstall scto
+    net install scto , from("https://raw.githubusercontent.com/surveycto/scto/master/src") replace
+```
+If you are not able to run `net install` from your computer, then you can download a .zip file with the content of this repository, extract it, and then replace the URL with the file location of the _src_ folder where you extracted the content of the .zip file. Make sure that you are in the branch you want to install beofre you downaload the .zip archive, otherwise you will get the _master_ branch version, which you can install much easier using `ssc install scto`.
 
 ## Contributions
 Contributions and any type of feedback is welcomed. Please feel free to submit a pull request with your own contributions, or open up a new issue on this page with a feature request, bug report or anything else. You can also send an email with your feedback to the email address below.
@@ -31,4 +33,4 @@ Contributions and any type of feedback is welcomed. Please feel free to submit a
 The **scto** package is developed under MIT license. See http://adampritchard.mit-license.org/ or see [the `LICENSE` file](https://github.com/surveycto/scto/blob/master/LICENSE) for details.
 
 ### **Main Contact**
-SurveyCTO ([info@surveycto.com](mailto:support@surveycto.com))
+SurveyCTO ([support@surveycto.com](mailto:support@surveycto.com))
