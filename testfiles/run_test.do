@@ -14,20 +14,14 @@
 		global scto_repo "" //path to where the repo is cloned
 		global outfolder "" //path to output folder.
 	}
-
+	
+	**Install the command. See https://github.com/surveycto/scto for 
+	* methods to install unreleased versions of this command
+	ssc install scto
+	
 	*folder globals
 	global ado 			"$scto_repo/src/ado"
 	global testfolder  	"$scto_repo/testfiles"
-
-	* Copy the files to Stata folder. This is identical to installing them.
-	copy "${ado}/sctofunctions.do"  "C:/ado/plus/s/sctofunctions.do" , replace
-	copy "${ado}/sctostreamsum.ado" "C:/ado/plus/s/sctostreamsum.ado", replace
-	copy "${ado}/sctostreamcsv.ado" "C:/ado/plus/s/sctostreamcsv.ado", replace
-	
-	*Copy help files so they can be accessed by typing -help sctostreamsum-
-	copy "${scto_repo}/src/help/sctostreamsum.sthlp" "C:/ado/plus/s/sctostreamsum.sthlp", replace
-	copy "${scto_repo}/src/help/sctostreamcsv.sthlp" "C:/ado/plus/s/sctostreamcsv.sthlp", replace
-
 	
 	*Create the folders needed in the output folder if they do not already exist
 	foreach datafolder in data_1 data_2 data_3 data_4 {
