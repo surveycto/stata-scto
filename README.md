@@ -1,11 +1,12 @@
 # Stata package with SurveyCTO related utility functions
 
-This repo Stata commands developed to work with data collected using [SurveyCTO](https://www.surveycto.com)'s data collection software.
+This repo Stata commands was developed to work with data collected using [SurveyCTO](https://www.surveycto.com)'s data collection software.
 
 ## Content
 
-Currently there are two commands in this repo. Both of them are related to processing of sensor stream data outputted from SurveyCTO Surveys.
+This Stata package includes three commands related to processing data outputted from SurveyCTO Surveys:
 
+* **sctomedia** - creates copies of SurveyCTO media files in a specified folder with user-friendly names constructed from values stored in your dataset. This includes images, audio, video and text media files. This command can also optionally organize such files into a folder structure, also named using values stored in your data.
 * **sctostreamcsv** - reads sensor stream csv files and calculates statistics for each time period used when collecting the sensor stream. This command can be used to see which part of the questionnaire was done in a context that was quiet, dark etc.
 * **sctostreamsum** - reads sensor stream csv files and calculates statistics for each submission and saves them all in a .dta file that can merged with the main survey data. This allows you to get all the features from the *sensor_statistics* field even after the data collection as long as you used the *sensor_stream* field for the sensor you are interested in.
 
