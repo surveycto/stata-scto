@@ -1,3 +1,3 @@
-v 0.1
-d SurveyCTO, sales@surveycto.com
-p A Package of Stata tools in relation to data collection using SurveyCTO
+v 3
+d SurveyCTO, support@surveycto.com
+p scto Module to provide utility functions for data collected using SurveyCTO
