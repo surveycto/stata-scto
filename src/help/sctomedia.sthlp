@@ -1,11 +1,8 @@
 {smcl}
-{* *! version 1.0.0  19jul2019}{...}
-
-{viewerjumpto "Syntax" "sctomedia##syntax"}{...}
-{viewerjumpto "Description" "sctomedia##description"}{...}
-{viewerjumpto "Options" "sctomedia##options"}{...}
-{viewerjumpto "Examples" "sctomedia##examples"}{...}
-{viewerjumpto "Author" "sctomedia##author"}{...}
+{* 1 Aug 2019}{...}
+{hline}
+help for {hi:sctomedia}
+{hline}
 
 {title:Title}
 
