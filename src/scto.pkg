@@ -19,10 +19,10 @@ d
 d Author: SurveyCTO
 d E-mail: support@surveycto.com
 d
-f sctostreamcsv.ado
-f sctostreamsum.ado
-f sctostreamcsv.sthlp
-f sctostreamsum.sthlp
-f sctofunctions.do
-f sctomedia.ado
-f sctomedia.sthlp
+f /ado/sctostreamcsv.ado
+f /ado/sctostreamsum.ado
+f /help/sctostreamcsv.sthlp
+f /help/sctostreamsum.sthlp
+f /ado/sctofunctions.do
+f /ado/sctomedia.ado
+f /help/sctomedia.sthlp
