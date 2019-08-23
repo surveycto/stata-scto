@@ -1,5 +1,5 @@
 {smcl}
-{* 1 Aug 2019}{...}
+{* 23 Aug 2019}{...}
 {hline}
 help for {hi:sctomedia}
 {hline}
@@ -13,7 +13,7 @@ help for {hi:sctomedia}
 {title:Syntax}
 
 {p 8 15 2}
-{cmd:sctomedia} {cmd:var}({it:{help varname}}) {help if:[if]} {help in:[in]}, [{cmd:by}({it:varlist})] {cmd:id}({it:varname}) {cmd:vars}({it:varlist}) {cmdab:media:folder}({it:folder_path}) {cmdab:output:folder}({it:folder_path}) {cmdab:res:olve}{it:(varname)}
+{cmd:sctomedia} {it:{help varname}} {help if:[if]} {help in:[in]}, [{cmd:by}({it:varlist})] {cmd:id}({it:varname}) {cmd:vars}({it:varlist}) {cmdab:media:folder}({it:folder_path}) {cmdab:output:folder}({it:folder_path}) {cmdab:res:olve}{it:(varname)}
 
 {pstd}
 You may enclose {it:folder_path} in double quotes.
