@@ -24,7 +24,7 @@ f /ado/sctostreamcsv.ado
 f /ado/sctostreamsum.ado
 f /help/sctostreamcsv.sthlp
 f /help/sctostreamsum.sthlp
-f /ado/sctofunctions.do
+F /ado/sctofunctions.do
 f /ado/sctomedia.ado
 f /help/sctomedia.sthlp
 f /ado/sctoapi.ado
