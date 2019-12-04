@@ -1,0 +1,71 @@
+VERSION 16
+
+POSITION . . 420 470
+
+DIALOG sctoapi, label("SurveyCTO API")
+BEGIN
+  TEXT    tx_server   10  10  200  .,  label("Server name:")
+  EDIT    server      10  +20  200  .,  label("Server name")
+  TEXT    tx_user     10  +25  200  .,  label("Username:")
+  EDIT    username    10  +20  200  .,	error("Username")
+  TEXT    tx_pass     10  +25  200  .,	label("Password:")
+  EDIT    password    10  +20  200  .,  error("Password") password
+  TEXT    tx_formid   10  +25  200  .,  label("Form ID:")
+  EDIT    formid      10  +20  200  .,  error("Form ID:")
+  TEXT    tx_date     10  +25  200  .,  label("Date (Unix timestamp):")
+  EDIT    date        10  +20  200  .,  error("Date (Unix timestamp):")
+  TEXT    tx_key      10  +25  200  .,  label("Private Key (for encrypted forms):") 
+  FILE    keypath     10  +25  400  .,  label("Browse...") directory
+  TEXT    tx_path     10  +25  200  .,  label("Export to:")
+  FILE    outputpath  10  +20  400  .,  label("Browse...") directory  
+  TEXT    tx_media    10  +25  400  .,  label("Export media files for fields (optional):")
+  EDIT    media       10  +25  400  .,  label("Export media files for fields (optional):")
+  TEXT    tx_dta      10  +25  200  .,  label("Do you want to export a .dta file?")
+  RADIO   rb_yes      10  +20  200  .,  first label("Yes") option(dtafile)
+  RADIO   rb_no       @  +20  @     .,  last label("No") option(nodta)
+END
+
+OK ok1, label("OK") target(stata hidden)
+CANCEL can1, label("Cancel")
+HELP hlp1, view("help sctoapi")
+RESET res1
+COPY copy1
+
+PROGRAM command
+BEGIN
+    require sctoapi.server
+    require sctoapi.username
+    require sctoapi.password
+    require sctoapi.formid
+    require sctoapi.outputpath
+    require sctoapi.date
+    put "sctoapi "
+    put sctoapi.formid
+    put ", "
+    put "server("
+    put sctoapi.server
+    put ")"
+    put "username("
+    put sctoapi.username
+    put ")"
+    put "password("
+    put sctoapi.password
+    put ")"
+    put "date("
+    put sctoapi.date
+    put ")"
+    put "output("
+    put sctoapi.outputpath
+    put ")"
+    if sctoapi.keypath {
+      put "key("
+      put sctoapi.keypath
+      put ")"
+    }
+    if sctoapi.media {
+      put "media("
+      put sctoapi.media
+      put ")"
+    }
+    option radio(sctoapi rb_yes)
+END
