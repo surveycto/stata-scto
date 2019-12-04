@@ -19,6 +19,7 @@ d
 d Author: SurveyCTO
 d E-mail: support@surveycto.com
 d
+f /help/scto.sthlp
 f /ado/sctostreamcsv.ado
 f /ado/sctostreamsum.ado
 f /help/sctostreamcsv.sthlp
