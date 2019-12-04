@@ -26,3 +26,5 @@ f /help/sctostreamsum.sthlp
 f /ado/sctofunctions.do
 f /ado/sctomedia.ado
 f /help/sctomedia.sthlp
+f /ado/sctoapi.ado
+f /help/sctoapi.sthlp
