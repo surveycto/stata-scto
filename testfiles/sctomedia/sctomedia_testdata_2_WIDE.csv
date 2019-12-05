@@ -1,0 +1,8 @@
+SubmissionDate,starttime,endtime,deviceid,subscriberid,simid,devicephonenum,id,name,animal,animal_image,instanceID,formdef_version,KEY
+"9/11/2019, 3:28:03 PM","9/11/2019, 3:27:21 PM","9/11/2019, 3:28:03 PM",(web),,,,1,Anne,3,media\dolphin-1568212076062.jpg,uuid:5e9fa9b9-48e3-4b11-9e7f-2d064065f132,1909111517,uuid:5e9fa9b9-48e3-4b11-9e7f-2d064065f132
+"9/11/2019, 3:29:37 PM","9/11/2019, 3:28:07 PM","9/11/2019, 3:29:37 PM",(web),,,,2,Jay,1,media\elephant-1568212171181.jpg,uuid:70afab90-4d55-401d-a1a8-9b4831da63da,1909111517,uuid:70afab90-4d55-401d-a1a8-9b4831da63da
+"9/11/2019, 3:30:09 PM","9/11/2019, 3:29:40 PM","9/11/2019, 3:30:09 PM",(web),,,,3,Chris,4,media\monkey-1568212204774.jpg,uuid:05611a0a-d0be-47d7-8805-e76eedcc6c35,1909111517,uuid:05611a0a-d0be-47d7-8805-e76eedcc6c35
+"9/11/2019, 3:30:38 PM","9/11/2019, 3:30:12 PM","9/11/2019, 3:30:38 PM",(web),,,,4,Peter,6,media\penguin-1568212233278.jpg,uuid:db6e727a-eda4-4200-9261-95b4a31d828e,1909111517,uuid:db6e727a-eda4-4200-9261-95b4a31d828e
+"9/11/2019, 3:31:10 PM","9/11/2019, 3:30:40 PM","9/11/2019, 3:31:10 PM",(web),,,,5,Jen,2,media\tiger-1568212265575.jpg,uuid:e22309ca-9790-4776-812e-38125dca8d5f,1909111517,uuid:e22309ca-9790-4776-812e-38125dca8d5f
+"9/11/2019, 3:33:09 PM","9/11/2019, 3:31:14 PM","9/11/2019, 3:33:09 PM",(web),,,,6,Caroline,4,media\monkey-1568212382455.jpg,uuid:bdd5e601-1250-4ebc-9dd5-86284aa8507e,1909111517,uuid:bdd5e601-1250-4ebc-9dd5-86284aa8507e
+"9/11/2019, 3:34:33 PM","9/11/2019, 3:33:12 PM","9/11/2019, 3:34:33 PM",(web),,,,2,Lucas,6,media\penguin-1568212466648.jpg,uuid:04ecd812-62ec-4d94-8ed3-ed71a75f5ab8,1909111517,uuid:04ecd812-62ec-4d94-8ed3-ed71a75f5ab8
