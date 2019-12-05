@@ -53,9 +53,9 @@ clear all
 if `run_data_1' == 1 {
 
 	*Run tests on data 1.
-	local data sctomedia_testdata_1
+	local data data_1
 	
-	import delimited "`testfolder'/data_1/sctomedia_testdata_1_WIDE.csv"
+	import delimited "`testfolder'/`data_1'/sctomedia_testdata_1_WIDE.csv"
 
 	*Run the command. This command will rename and organize the media files stored in text_audit, which is a textaudit field.
 	//The 'id' is the unique identifier.
@@ -66,22 +66,23 @@ if `run_data_1' == 1 {
 	//3) Rename all media files according to the sequence: `id'_`survey_country'_`survey_city'
 
 	sctomedia text_audit, id(id) ///
-						by(survey_region) ///
-						vars(survey_country survey_city) ///
-						media("`testfolder'/data_1/media") ///
-						output("`output1'")
-
-clear						
+			by(survey_region) ///
+			vars(survey_country survey_city) ///
+			media("`testfolder'/`data'/media") ///
+			output("`output1'")
+					
 }
+
+clear
 
 ***************************************
 
 if `run_data_2' == 1 {
 
 	*Run tests on data 2.
-	local data sctomedia_testdata_2
+	local data data_2
 	
-	import delimited "`testfolder'/data_2/sctomedia_testdata_2_WIDE.csv"
+	import delimited "`testfolder'/`data'/sctomedia_testdata_2_WIDE.csv"
 
 	*Run the command. This command will rename and organize the media files stored in animal_image, which is an image field.
 	//The 'id' is the unique identifier. However, the 'id' has duplicates, so resolve() is required to be able to distinguish these duplicate observations.
@@ -92,12 +93,10 @@ if `run_data_2' == 1 {
 	//3) Rename all media files according to the sequence: `id'_`key'_`name' for duplicate observations, and `id'_`name' for non-duplicate observations
 
 	sctomedia animal_image, id(id) ///
-						vars(name) ///
-						media("`testfolder'/data_2/media") ///
-						output("`output2'") ///
-						resolve(key)					
+				vars(name) ///
+				media("`testfolder'/`data'/media") ///
+				output("`output2'") ///
+				resolve(key)					
 
-	clear
 }
-
 ***************************************
