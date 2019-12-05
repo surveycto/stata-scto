@@ -55,7 +55,7 @@ if `run_data_1' == 1 {
 	*Run tests on data 1.
 	local data data_1
 	
-	import delimited "`testfolder'/`data_1'/sctomedia_testdata_1_WIDE.csv"
+	import delimited "`testfolder'/`data'/sctomedia_testdata_1_WIDE.csv"
 
 	*Run the command. This command will rename and organize the media files stored in text_audit, which is a textaudit field.
 	//The 'id' is the unique identifier.
