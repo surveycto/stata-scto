@@ -18,7 +18,7 @@ help for {hi:sctoapi}
 [{cmd:key}({it:file_path})] [{cmd:media}({it:varlist})] [dtafile]
 
 {pstd}
-Alternatively, type {it:db sctoapi} to run the command via a Dialog Box.
+Alternatively, type {it:db sctoapi} to run the command via a Dialog Box or click {dialog sctoapi:here}.
 
 
 {synoptset 25}{...}
@@ -45,10 +45,11 @@ a timestamp in seconds or milliseconds.{p_end}
 {cmd:sctoapi} downloads SurveyCTO data in JSON format
 via the {browse "https://support.surveycto.com/hc/en-us/articles/360033156894-REST-API-documentation":API}
 (you'll need a SurveyCTO account to see the content of the link). The data is then converted and saved
-in CSV and DTA (optional) format. Optionally,
-it also downloads media files which are saved in an `outputfolder' subfolder named 'media'. For a
-more user-friendly way to run this command, and to ensure that the password is hidden and not saved in any
-log, you can use the Dialog Box of the command (type {it:db sctoapi}).
+in CSV and DTA (optional) format. Optionally, it also downloads media files which are saved in
+an `outputfolder' subfolder named 'media' - you'll then be able to run the {help sctomedia:sctomedia} command
+to rename and relocate your media files, if needed. For a more user-friendly way to run the sctoapi command, and
+to ensure that the password is hidden and not saved in any log, you can use the Dialog Box of the
+command (type {it:db sctoapi}) or click {dialog sctoapi:here}.
 
 {marker options}{...}
 {title:Options}
@@ -81,7 +82,13 @@ in the sub-folder 'media' within the output folder.
 for {browse docs.surveycto.com/02-designing-forms/02-additional-topics/06.encrypting.html:encrypted forms}.
 
 {phang}
-{opt media(varlist)} specifies the media variable(s) you want to download and save in "`outputfolder'/media".
+{opt media(varlist)} specifies the SurveyCTO form media fields you want to download and save
+in "`outputfolder'/media", including
+{browse "https://docs.surveycto.com/02-designing-forms/01-core-concepts/03ze.field-types-audio-audit.html":audio audits},
+{browse "https://docs.surveycto.com/02-designing-forms/01-core-concepts/03zd.field-types-text-audit.html":text audits},
+{browse "https://docs.surveycto.com/02-designing-forms/01-core-concepts/03m.field-types-image.html":images},
+{browse "https://docs.surveycto.com/02-designing-forms/01-core-concepts/03n.field-types-audio.html":audio},
+and {browse "https://docs.surveycto.com/02-designing-forms/01-core-concepts/03o.field-types-video.html":video}.
 
 {phang}
 {opt dtafile} saves a .dta file in the output folder, if specified.
