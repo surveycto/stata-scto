@@ -106,21 +106,11 @@ program define sctoapi, rclass
 		nois di `"Decrypting and Downloading `formid' from {browse "https://`server'.surveycto.com":`server'} in JSON format (WIDE)..."'
 
 			local filename = "`formid'" + ".json"
-			
-			if regexm(c(os),"Windows")==1 {
 
 				!curl -s "`url'/data/wide/json/`formid'?date=`date'" ///
 					--digest -u `username':`password' ///
 					-F "private_key=@`key'" ///
-					--output "`outputfolder'/`filename'" 
-			}
-				
-			else if regexm(c(os),"Mac")==1 {
-				!curl -s "`url'/data/wide/json/`formid'?date=`date'" ///
-					--digest -u `username':`password' ///
-					-F "private_key=@`key'" ///
-					--output "`outputfolder'/`filename'" 
-			}
+					--output "`outputfolder'/`filename'"
 
 			tempname jsondata observation datapoint	
 			scalar `jsondata' = fileread("`outputfolder'/`filename'")
