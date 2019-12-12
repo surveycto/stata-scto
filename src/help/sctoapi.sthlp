@@ -18,7 +18,7 @@ help for {hi:sctoapi}
 [{cmd:key}({it:file_path})] [{cmd:media}({it:varlist})] [dtafile]
 
 {pstd}
-Alternatively, type {it:db sctoapi} to run the command via a Dialog Box or click {dialog sctoapi:here}.
+Alternatively, type {it:db sctoapi} to run the command via a dialog box or click {dialog sctoapi:here}.
 
 
 {synoptset 25}{...}
@@ -48,8 +48,8 @@ via the {browse "https://support.surveycto.com/hc/en-us/articles/360033156894-RE
 in CSV and DTA (optional) format. Optionally, it also downloads media files which are saved in
 an `outputfolder' subfolder named 'media' - you'll then be able to run the {help sctomedia:sctomedia} command
 to rename and relocate your media files, if needed. For a more user-friendly way to run the sctoapi command, and
-to ensure that the password is hidden and not saved in any log, you can use the Dialog Box of the
-command (type {it:db sctoapi}) or click {dialog sctoapi:here}.
+to ensure that the password is hidden and not saved in any log, you can use the dialog box for the
+command (type {it:db sctoapi} or click {dialog sctoapi:here}).
 
 {marker options}{...}
 {title:Options}
