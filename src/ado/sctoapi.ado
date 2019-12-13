@@ -279,7 +279,7 @@ program define sctoapi_media, rclass
 			cap confirm file "`output'"
 				if _rc {
 					scalar PROCEXEC_HIDDEN = 1
-					!curl -s `url' --digest -u `username':`password' -F "private_key=@`key'" --output `output'
+					!curl -s "`url'" --digest -u `username':`password' -F "private_key=@`key'" --output `output'
 					scalar pid = r(pid)
 				}
 		}
