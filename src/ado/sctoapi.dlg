@@ -25,7 +25,7 @@ BEGIN
   RADIO   rb_no       @  +20  @     .,  last label("No") option(nodta)
 END
 
-OK ok1, label("OK")
+OK ok1, label("OK") target(stata hidden)
 CANCEL can1, label("Cancel")
 HELP hlp1, view("help sctoapi")
 RESET res1
