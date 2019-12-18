@@ -35,7 +35,6 @@ PROGRAM command
 BEGIN
     require sctoapi.server
     require sctoapi.username
-    require sctoapi.password
     require sctoapi.formid
     require sctoapi.outputpath
     require sctoapi.date
