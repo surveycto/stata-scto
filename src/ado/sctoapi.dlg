@@ -9,7 +9,7 @@ BEGIN
   TEXT    tx_user     10  +25  200  .,  label("Username:")
   EDIT    username    10  +20  200  .,	error("Username")
   TEXT    tx_pass     10  +25  200  .,	label("Password:")
-  EDIT    password    10  +20  200  .,  error("Password") password
+  EDIT    pass        10  +25  200  .,  error("Password") password
   TEXT    tx_formid   10  +25  200  .,  label("Form ID:")
   EDIT    formid      10  +20  200  .,  error("Form ID:")
   TEXT    tx_date     10  +25  200  .,  label("Date (Unix timestamp):")
@@ -35,6 +35,7 @@ PROGRAM command
 BEGIN
     require sctoapi.server
     require sctoapi.username
+    require sctoapi.pass
     require sctoapi.formid
     require sctoapi.outputpath
     require sctoapi.date
@@ -48,7 +49,7 @@ BEGIN
     put sctoapi.username
     put ")"
     put "password("
-    put sctoapi.password
+    put sctoapi.pass
     put ")"
     put "date("
     put sctoapi.date
