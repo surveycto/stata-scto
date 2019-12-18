@@ -9,13 +9,13 @@ BEGIN
   TEXT    tx_user     10  +25  200  .,  label("Username:")
   EDIT    username    10  +20  200  .,	error("Username")
   TEXT    tx_pass     10  +25  200  .,	label("Password:")
-  EDIT    pass        10  +25  200  .,  error("Password")
+  EDIT    pass        10  +25  200  .,  error("Password") password
   TEXT    tx_formid   10  +25  200  .,  label("Form ID:")
   EDIT    formid      10  +20  200  .,  error("Form ID:")
   TEXT    tx_date     10  +25  200  .,  label("Date (Unix timestamp):")
   EDIT    date        10  +20  200  .,  error("Date (Unix timestamp):")
   TEXT    tx_key      10  +25  200  .,  label("Private Key (for encrypted forms):") 
-  FILE    keypath     10  +25  400  .,  label("Browse...") directory
+  FILE    keypath     10  +20  400  .,  label("Browse...") directory
   TEXT    tx_path     10  +25  200  .,  label("Export to:")
   FILE    outputpath  10  +20  400  .,  label("Browse...") directory  
   TEXT    tx_media    10  +25  400  .,  label("Export media files for fields (optional):")
