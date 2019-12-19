@@ -27,6 +27,11 @@ program define sctoapi, rclass
 	if mi("`outputfolder'") {
 		local outputfolder = "."
 	}
+	else if !mi("`outputfolder'") {
+		if regexm("`outputfolder'", "\.$"){
+ 			local outputfolder = substr("`outputfolder'", 1, length("`outputfolder'") - 1)
+ 		}
+	}
 
 	
 	foreach formid in `formids' {
