@@ -1,5 +1,5 @@
 VERSION 13
-
+SYNCHRONOUS_ONLY
 POSITION . . 420 470
 
 DIALOG sctoapi, label("SurveyCTO API")
@@ -35,7 +35,6 @@ PROGRAM command
 BEGIN
     require sctoapi.server
     require sctoapi.username
-    require sctoapi.pass
     require sctoapi.formid
     require sctoapi.outputpath
     require sctoapi.date
@@ -68,4 +67,5 @@ BEGIN
       put ")"
     }
     option radio(sctoapi rb_yes)
+    stata hidden
 END
