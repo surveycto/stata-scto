@@ -1,5 +1,4 @@
 VERSION 13
-SYNCHRONOUS_ONLY
 
 POSITION . . 420 470
 
@@ -69,5 +68,4 @@ BEGIN
       put ")"
     }
     option radio(sctoapi rb_yes)
-    stata hidden
 END
