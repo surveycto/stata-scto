@@ -1,5 +1,5 @@
 VERSION 13
-
+SYNCHRONOUS_ONLY
 POSITION . . 420 470
 
 DIALOG sctoapi, label("SurveyCTO API")
@@ -9,7 +9,7 @@ BEGIN
   TEXT    tx_user     10  +25  200  .,  label("Username:")
   EDIT    username    10  +20  200  .,	error("Username")
   TEXT    tx_pass     10  +25  200  .,	label("Password:")
-  EDIT    pass        10  +25  200  .,  error("Password") nomemory password
+  EDIT    pass        10  +25  200  .,  error("Password") nomemory
   TEXT    tx_formid   10  +25  200  .,  label("Form ID:")
   EDIT    formid      10  +20  200  .,  error("Form ID:")
   TEXT    tx_date     10  +25  200  .,  label("Date (Unix timestamp):")
@@ -67,4 +67,5 @@ BEGIN
       put ")"
     }
     option radio(sctoapi rb_yes)
+    stata hidden
 END
