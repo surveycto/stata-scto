@@ -1,5 +1,5 @@
 VERSION 13
-SYNCHRONOUS_ONLY
+
 POSITION . . 420 470
 
 DIALOG sctoapi, label("SurveyCTO API")
@@ -67,5 +67,4 @@ BEGIN
       put ")"
     }
     option radio(sctoapi rb_yes)
-    stata hidden
 END
