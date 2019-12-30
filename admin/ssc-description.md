@@ -10,10 +10,10 @@ If you are not updating this meta information when updating the files in the `sc
 ***
 
 ### Title
-SCTO : utility functions for data collected using SurveyCTO
+SCTO - Module to provide utility functions for data collected using SurveyCTO
 
 ### Description
-The scto Stata package includes a set of utility functions related to data collected using SurveyCTO, www.surveycto.com. Currently the package includes two commands that both use sensor stream data files as input. Sensor stream data are recordings of light level, sound level and pitch, and movement captured during CAPI surveys on smartphones or tablets conducted using SurveyCTO. These commands can take the sensor stream data and aggregate it so it can be merged with the main survey data, and calculate statistics for each time period throughout the interview. These commands are developed by the team at SurveyCTO.
+The scto Stata package is a set of utility functions related to data collected using SurveyCTO, www.surveycto.com. Currently the package includes four commands that help with downloading data (sctoapi), organizing media files (sctomedia) and processing sensor stream data files (sctostreamsum & sctostreamcsv) captured during surveys conducted using SurveyCTO. The first downloads forms' data in JSON and converts it into CSV and DTA (optional), the second creates copies of media files in a folder structure with user-friendly names constructed from values stored in your dataset, while the other process sensor stream data (recordings of light level, sound level and pitch, and movement), aggregates it, leaving you with a dataset that can be merged with the main survey data, and calculate statistics for each time period throughout each interview. These commands are developed by the team at SurveyCTO.
 
 ### Keywords
 * data collection
@@ -24,6 +24,8 @@ The scto Stata package includes a set of utility functions related to data colle
 * SurveyCTO
 * survey data
 * sensor data
+* media files
+* RESTful API
 
 ### Required Stata Version      
 Stata 13
