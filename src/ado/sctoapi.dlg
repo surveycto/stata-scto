@@ -1,5 +1,8 @@
-VERSION 16
+*!Version 1.0 04DEC2019 SurveyCTO support@surveycto.com
+*! for sctoapi Version 1.0 04DEC2019
 
+VERSION 13
+SYNCHRONOUS_ONLY
 POSITION . . 420 470
 
 DIALOG sctoapi, label("SurveyCTO API")
@@ -9,13 +12,13 @@ BEGIN
   TEXT    tx_user     10  +25  200  .,  label("Username:")
   EDIT    username    10  +20  200  .,	error("Username")
   TEXT    tx_pass     10  +25  200  .,	label("Password:")
-  EDIT    password    10  +20  200  .,  error("Password") password
+  EDIT    pass        10  +25  200  .,  error("Password") nomemory password
   TEXT    tx_formid   10  +25  200  .,  label("Form ID:")
   EDIT    formid      10  +20  200  .,  error("Form ID:")
   TEXT    tx_date     10  +25  200  .,  label("Date (Unix timestamp):")
   EDIT    date        10  +20  200  .,  error("Date (Unix timestamp):")
   TEXT    tx_key      10  +25  200  .,  label("Private Key (for encrypted forms):") 
-  FILE    keypath     10  +25  400  .,  label("Browse...") directory
+  FILE    keypath     10  +20  400  .,  label("Browse...")
   TEXT    tx_path     10  +25  200  .,  label("Export to:")
   FILE    outputpath  10  +20  400  .,  label("Browse...") directory  
   TEXT    tx_media    10  +25  400  .,  label("Export media files for fields (optional):")
@@ -25,7 +28,7 @@ BEGIN
   RADIO   rb_no       @  +20  @     .,  last label("No") option(nodta)
 END
 
-OK ok1, label("OK") target(stata hidden)
+OK ok1, label("OK")
 CANCEL can1, label("Cancel")
 HELP hlp1, view("help sctoapi")
 RESET res1
@@ -35,7 +38,7 @@ PROGRAM command
 BEGIN
     require sctoapi.server
     require sctoapi.username
-    require sctoapi.password
+    require sctoapi.pass
     require sctoapi.formid
     require sctoapi.outputpath
     require sctoapi.date
@@ -49,7 +52,7 @@ BEGIN
     put sctoapi.username
     put ")"
     put "password("
-    put sctoapi.password
+    put sctoapi.pass
     put ")"
     put "date("
     put sctoapi.date
@@ -68,4 +71,5 @@ BEGIN
       put ")"
     }
     option radio(sctoapi rb_yes)
+    stata hidden
 END
