@@ -14,7 +14,7 @@ This Stata package includes four commands related to processing data outputted f
 ## Installation
 This package requires Stata 13 or newer.
 
-The easiest way to install this package of commands and keep it up to date is to type `ssc install scto` in Stata (this is submitted to SSC but we are still waiting for the commands to be availible online). Keep the files up to date by running `adoupdate` regularly, and follow the instructions if any of your installed packages are out of date.
+The easiest way to install this package of commands and keep it up to date is to type `ssc install scto` in Stata. Keep the files up to date by running `adoupdate` regularly, and follow the instructions if any of your installed packages are out of date.
 
 ### Installation alternatives to SSC
 An alternative to SSC is to install this package directly from the files in this repository. This should not be the preferred method for most users as the only advantage of this method compared to `ssc install scto` is that it allows you to install a version of the _scto_ package from another branch in this repo where we are developing features not yet published on SSC. This is only relevant to users that are helping us to test out new features.
