@@ -11,12 +11,12 @@ program define sctoapi, rclass
 	syntax anything(name=formids id="formid(s)"), ///
 		SERVER(string)      	/// SurveyCTO servername
 		USERname(string)    	/// SurveyCTO username
-		PASSword(string)		/// SurveyCTO password
-		DATE(string)			/// Date Parameter in UTC
+		PASSword(string)	/// SurveyCTO password
+		DATE(string)		/// Date Parameter in UTC
 		OUTPUTfolder(string)   	/// location to download json to
-		[KEY(string)]			/// Private Key for Encrypted forms
+		[KEY(string)]		/// Private Key for Encrypted forms
 		[MEDIA(namelist)]   	/// flag to download media files
-		[DTAFILE]				/// flag to download a .dta file	
+		[DTAFILE]		/// flag to download a .dta file	
 		[REPlace]
 
 	preserve
