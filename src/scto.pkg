@@ -3,18 +3,22 @@ d SCTO  Module to provide utility functions for data collected using SurveyCTO
 d
 d The scto Stata package includes a set of utility functions
 d related to data collected using SurveyCTO, www.surveycto.com.
-d Currently the package includes two commands that both use sensor
-d stream data files as input. Sensor stream data are recordings of
-d light level, sound level and pitch, and movement captured during
-d CAPI surveys on smartphones or tablets conducted using SurveyCTO.
-d These commands can take the sensor stream data and aggregate it
-d so it can be merged with the main survey data, and calculate
-d statistics for each time period throughout the interview. These
-d commands are developed by the team at SurveyCTO.
+d Currently the package includes four commands Currently the package
+d includes four commands that help with downloading data via an API (sctoapi),
+d organizing media files (sctomedia) and processing sensor stream data files
+d (sctostreamsum & sctostreamcsv) captured during surveys conducted using SurveyCTO.
+d The first downloads forms' data in JSON and converts it into CSV and DTA (optional),
+d the second creates copies of media files in a folder structure with
+d user-friendly names constructed from values stored in your dataset,
+d while the other process sensor stream data (recordings of light level,
+d sound level and pitch, and movement), aggregates it, leaving you with a
+d dataset that can be merged with the main survey data, and calculate
+d statistics for each time period throughout each interview.
+d These commands are developed by the team at SurveyCTO.
 d
 d Requires: Stata version 13
 d
-d Distribution-Date: 20191230
+d Distribution-Date: 20200106
 d
 d Author: SurveyCTO
 d E-mail: support@surveycto.com
