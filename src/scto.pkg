@@ -16,9 +16,9 @@ d dataset that can be merged with the main survey data, and calculate
 d statistics for each time period throughout each interview.
 d These commands are developed by the team at SurveyCTO.
 d
-d Requires: Stata version 13
+d Requires: Stata version 14
 d
-d Distribution-Date: 20200106
+d Distribution-Date: 20200326
 d
 d Author: SurveyCTO
 d E-mail: support@surveycto.com
