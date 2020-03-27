@@ -217,7 +217,7 @@ program define sctoapi_media, rclass
 	local regex_ta "TA_[A-Za-z0-9\-]*.csv"
 	local regex_image "([0-9]*[.](jpg|png|jpeg|tif|tiff|gif|png|jif|jfif|jp2|jpx|j2k|j2c|fpx|pcd|pdf|bmp|psd|ai|eps|svg|ps|drw))"
 	local regex_video "([0-9]*[.](mp4|webm|mkv|flv|vob|ogv|ogg|drc|mng|avi|mov|qt|wmv|yuv|rm|rmvb|asf|mp4|m4p|m4v|mpg|mp2|mpeg|mpe|mpv|mpg|mpeg|m2v|m4v|svi|3gp|3g2|mxf|roq|nsv))"
-	local regex_aa "AA_[A-Za-z0-9\-]*.[a-z0-9]"
+	local regex_aa "AA_[A-Za-z0-9_\-]*.[a-z0-9]*"
 	local regex_comment "Comments-[A-Za-z0-9\-]*.csv"
 
 	tempvar files
