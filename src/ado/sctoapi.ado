@@ -1,4 +1,4 @@
-*!Version 2.0 26MAR2020 SurveyCTO support@surveycto.com
+*!Version 2.0 27MAR2020 SurveyCTO support@surveycto.com
 
 /* Developed by IPA (Innovations for Poverty Action) and SurveyCTO
   This program downloads SurveyCTO data in JSON format via the API. The data
@@ -80,7 +80,7 @@ program define sctoapi, rclass
 		noisily di ""
 		}
 		
-		local csvfilename = "`outputfolder'" + "/" + "`formid'" + ".csv"
+		local csvfilename = "`outputfolder'" + "/" + "`formid'" + "_WIDE.csv"
 		export delimited using `csvfilename', replace
 		
 		noisily di "Export of `formid' CSV file complete."
@@ -150,7 +150,7 @@ program define sctoapi, rclass
 		noisily di ""
 		}
 		
-		local csvfilename = "`outputfolder'" + "/" + "`formid'" + ".csv"
+		local csvfilename = "`outputfolder'" + "/" + "`formid'" + "_WIDE.csv"
 		export delimited using `csvfilename', replace
 		
 		noisily di "Export of CSV file complete."
