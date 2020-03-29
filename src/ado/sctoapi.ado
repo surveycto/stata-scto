@@ -1,4 +1,4 @@
-*!Version 1.0 04DEC2019 SurveyCTO support@surveycto.com
+*!Version 2.0 27MAR2020 SurveyCTO support@surveycto.com
 
 /* Developed by IPA (Innovations for Poverty Action) and SurveyCTO
   This program downloads SurveyCTO data in JSON format via the API. The data
@@ -44,7 +44,7 @@ program define sctoapi, rclass
 			local filename = "`formid'" + ".json"
 
 			!curl -s "`url'/data/wide/json/`formid'?date=`date'" ///
-				--digest -u `username':`password' ///
+				-u `username':`password' ///
 				--output "`outputfolder'/`filename'" 
 
 			tempname jsondata observation datapoint	
@@ -80,7 +80,7 @@ program define sctoapi, rclass
 		noisily di ""
 		}
 		
-		local csvfilename = "`outputfolder'" + "/" + "`formid'" + ".csv"
+		local csvfilename = "`outputfolder'" + "/" + "`formid'" + "_WIDE.csv"
 		export delimited using `csvfilename', replace
 		
 		noisily di "Export of `formid' CSV file complete."
@@ -113,7 +113,7 @@ program define sctoapi, rclass
 			local filename = "`formid'" + ".json"
 
 				!curl -s "`url'/data/wide/json/`formid'?date=`date'" ///
-					--digest -u `username':`password' ///
+					-u `username':`password' ///
 					-F "private_key=@`key'" ///
 					--output "`outputfolder'/`filename'"
 
@@ -150,7 +150,7 @@ program define sctoapi, rclass
 		noisily di ""
 		}
 		
-		local csvfilename = "`outputfolder'" + "/" + "`formid'" + ".csv"
+		local csvfilename = "`outputfolder'" + "/" + "`formid'" + "_WIDE.csv"
 		export delimited using `csvfilename', replace
 		
 		noisily di "Export of CSV file complete."
@@ -217,7 +217,7 @@ program define sctoapi_media, rclass
 	local regex_ta "TA_[A-Za-z0-9\-]*.csv"
 	local regex_image "([0-9]*[.](jpg|png|jpeg|tif|tiff|gif|png|jif|jfif|jp2|jpx|j2k|j2c|fpx|pcd|pdf|bmp|psd|ai|eps|svg|ps|drw))"
 	local regex_video "([0-9]*[.](mp4|webm|mkv|flv|vob|ogv|ogg|drc|mng|avi|mov|qt|wmv|yuv|rm|rmvb|asf|mp4|m4p|m4v|mpg|mp2|mpeg|mpe|mpv|mpg|mpeg|m2v|m4v|svi|3gp|3g2|mxf|roq|nsv))"
-	local regex_aa "AA_[A-Za-z0-9\-]*.[a-z0-9]"
+	local regex_aa "AA_[A-Za-z0-9_\-]*.[a-z0-9]*"
 	local regex_comment "Comments-[A-Za-z0-9\-]*.csv"
 
 	tempvar files
@@ -237,7 +237,7 @@ program define sctoapi_media, rclass
 			cap confirm file "`path'/`file'/nul"
 			if _rc {
 				scalar PROCEXEC_HIDDEN = 1
-				!curl -s `url' --digest -u `username':`password' --output `output'
+				!curl -s `url' -u `username':`password' --output `output'
 				scalar pid = r(pid)
 			}
 		}
@@ -246,7 +246,7 @@ program define sctoapi_media, rclass
 			cap confirm file "`path'/`file'"
 			if _rc {
 				scalar PROCEXEC_HIDDEN = 1
-				!curl -s `url' --digest -u `username':`password' --output `output'
+				!curl -s `url' -u `username':`password' --output `output'
 				scalar pid = r(pid)
 			}
 		}
@@ -275,7 +275,7 @@ program define sctoapi_media, rclass
 			cap confirm file "`output'/nul"
 				if _rc {
 					scalar PROCEXEC_HIDDEN = 1
-					!curl -s `url' --digest -u `username':`password' -F "private_key=@`key'" --output `output'
+					!curl -s `url' -u `username':`password' -F "private_key=@`key'" --output `output'
 					scalar pid = r(pid)
 				}
 		}
@@ -284,7 +284,7 @@ program define sctoapi_media, rclass
 			cap confirm file "`output'"
 				if _rc {
 					scalar PROCEXEC_HIDDEN = 1
-					!curl -s "`url'" --digest -u `username':`password' -F "private_key=@`key'" --output `output'
+					!curl -s "`url'" -u `username':`password' -F "private_key=@`key'" --output `output'
 					scalar pid = r(pid)
 				}
 		}
