@@ -81,7 +81,7 @@ program define sctoapi, rclass
 		}
 		
 		local csvfilename = "`outputfolder'" + "/" + "`formid'" + "_WIDE.csv"
-		export delimited using `csvfilename', replace
+		export delimited using "`csvfilename'", replace
 		
 		noisily di "Export of `formid' CSV file complete."
 		noisily di ""
@@ -144,14 +144,14 @@ program define sctoapi, rclass
 		
 		if !mi("`dtafile'") {
 			local statafilename = "`outputfolder'" + "/" + "`formid'" + ".dta"
-			save `statafilename', replace
+			save "`statafilename'", replace
 		
 		noisily di "Export of .dta file complete."
 		noisily di ""
 		}
 		
 		local csvfilename = "`outputfolder'" + "/" + "`formid'" + "_WIDE.csv"
-		export delimited using `csvfilename', replace
+		export delimited using "`csvfilename'", replace
 		
 		noisily di "Export of CSV file complete."
 		noisily di ""
