@@ -10,10 +10,10 @@ This Stata package includes four commands related to processing data outputted f
 * **sctomedia** - creates copies of SurveyCTO media files in a specified folder with user-friendly names constructed from values stored in your dataset. This includes images, audio, video and text media files. This command can also optionally organize such files into a folder structure, also named using values stored in your data.
 * **sctostreamcsv** - reads sensor stream csv files and calculates statistics for each time period used when collecting the sensor stream. This command can be used to see which part of the questionnaire was done in a context that was quiet, dark etc.
 * **sctostreamsum** - reads sensor stream csv files and calculates statistics for each submission and saves them all in a .dta file that can merged with the main survey data. This allows you to get all the features from the *sensor_statistics* field even after the data collection as long as you used the *sensor_stream* field for the sensor you are interested in.
-* **sctorezone** - shifts time zones of time and datetime fields collected by SurveyCTO and formatted by SurveyCTO .do file templates.
+* **sctorezone** - shifts time zones of *time* and *datetime* fields collected by SurveyCTO and formatted by SurveyCTO .do file templates.
 
 ## Installation
-This package requires Stata 13 or newer.
+This package requires Stata 13 or newer (**sctoapi** requires Stata 14 or newer).
 
 The easiest way to install this package of commands and keep it up to date is to type `ssc install scto` in Stata. Keep the files up to date by running `adoupdate` regularly, and follow the instructions if any of your installed packages are out of date.
 
