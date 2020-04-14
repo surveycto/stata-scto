@@ -19,12 +19,13 @@ shift {ifin}
 {cmd:, force} [{opth o:nly(varlist)} | {opth e:xclude(varlist)}]
 
 {pstd}
-where {it:shift} indicates how to shift the {it:time/datetime} variables. {it:shift}
-can be formatted for {it:manual} or {it:automatic} re-zoning:
+where {it:shift} indicates how to shift your {it:datetime} and/or {it:time} fields.
+Shift can be formatted for {cmd:manual} or {cmd:automatic} re-zoning:
+
 
 {pstd}
-{bf:      - Manual:} set the number of hours to shift {it:datetime} / {it:time}
-variables forwards (use {cmd+}) or backwards (use {cmd-}). For example, {it:sctorezone +4, force}
+{bf:      - Manual:} set the number of hours to shift {it:datetime} and/or {it:time}
+variables forwards (use {cmd:+}) or backwards (use {cmd:-}). For example, {it:sctorezone +4, force}
 or {it:sctorezone -3, force}.
 
 {pstd}
@@ -32,7 +33,7 @@ or {it:sctorezone -3, force}.
 the data collector’s time zone at the start time of the survey: {it:format-date-time(${starttime}, '%Y-%b-%e %H:%M:%S')}.
 When exporting data, this field won’t be shifted according to the time zone of the exporting
 computer because all {it:calculate} fields are considered strings, not {it:datetime} or {it:time} fields,
-regardless their content. You can then use this {it:calculate} field in the command to shift all {it:datetime}and {it:time}
+regardless their content. You can then use this {it:calculate} field in the command to shift all {it:datetime} and {it:time}
 fields to the same time zone of the data collector’s device, e.g., {it:sctorezone starttime_calculate, force}.
 This command will calculate the difference between the exported {it:starttime} and {it:starttime_calculate} fields,
 and shift time zones accordingly.
@@ -41,12 +42,12 @@ and shift time zones accordingly.
 {synoptset 23 tabbed}{...}
 {synopthdr}
 {synoptline}
-{p2coldent:* {opth o:nly(varlist)}}shift time zone {opt only()} for these variables
+{p2coldent:* {opth o:nly(varlist)}}shift time zone {opt only()} for these variables.
 {p_end}
 {p2coldent:* {opth e:xclude(varlist)}}shift time zone for all {it:time/datetime} 
-variables {opt except} for these variables{p_end}
+variables, {opt except} for these variables.{p_end}
 {p2coldent:* {bf:force}}the {it:force} option is required as a reminder that 
-data in {it:time} and {it:datetime} variables will be overwritten{p_end}
+data in {it:time} and {it:datetime} variables will be overwritten.{p_end}
 {synoptline}
 {p2colreset}{...}
 {p 4 6 2}The {bf:force} option is required. Either {opt only()} or 
@@ -57,8 +58,8 @@ data in {it:time} and {it:datetime} variables will be overwritten{p_end}
 
 {pstd}
 SurveyCTO exports {it:datetime} and {it:time} fields relative to the
-{browse "https://docs.surveycto.com/05-exporting-and-publishing-data/01-overview/09.data-format.html": time zone of the exporting computer}
-– not the time zone of the data-collection device}. {cmd:sctorezone} is a great tool
+{browse "https://docs.surveycto.com/05-exporting-and-publishing-data/01-overview/09.data-format.html": time zone of the exporting computer},
+not the time zone of the data-collection device. {cmd:sctorezone} is a great tool
 to shift these fields back to the time zone where the data was collected. This command
 changes the time zones for {it:datetime} fields formatted according to the
 {browse "https://docs.surveycto.com/05-exporting-and-publishing-data/01-overview/11.using-stata.html":SurveyCTO .do file template},
@@ -75,17 +76,16 @@ shifted.
 will be overwritten.
 
 {phang}
-{opth o:nly(varlist)} specifies that the time zone should only be shifted for 
-the included {it:varlist}. If {it:only} is specified,
-{it:exclude} cannot be specified. If neither are specified, all {it:time} and 
-{it:datetime} variables will be shifted.
+{opth o:nly(varlist)} specifies that the time zone should only be shifted for
+{it:datetime} and {it:time} variables included in the {it:varlist}.
 
 {phang}
-{opth e:xclude(varlist)} specifies that the time zone should only be shifted for 
-all {it:time} and {it:datetime} variables except those included in the
-included {it:varlist}. If {it:exclude} is specified, 
-{it:only} cannot be specified. If neither are specified, all {it:time} and {it:datetime}
-variables will be shifted.
+{opth e:xclude(varlist)} specifies that the time zone should be shifted for 
+all {it:datetime} and {it:time} variables except for those included in the {it:varlist}.
+
+If {it:only} is specified,
+{it:exclude} cannot be specified. If neither are specified, all {it:time} and 
+{it:datetime} variables will be shifted.
 
 {marker examples}{...}
 {title:Examples}
