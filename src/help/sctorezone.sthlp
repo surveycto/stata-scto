@@ -23,24 +23,19 @@ where {it:shift} indicates how to shift the {it:time/datetime} variables. {it:sh
 can be formatted for {it:manual} or {it:automatic} re-zoning:
 
 {pstd}
-{bf:      - Manual:} set the number of hours to shift {it:time/datetime} variables 
-forwards (if you download west of data collection) or backwards (if you download
-east of data collection). Use the format: plus/minus sign number, for example
-{it:ctorezone +4, force} or {it:ctorezone -3, force}.
+{bf:      - Manual:} set the number of hours to shift {it:datetime} / {it:time}
+variables forwards (use {cmd+}) or backwards (use {cmd-}). For example, {it:sctorezone +4, force}
+or {it:sctorezone -3, force}.
 
 {pstd}
-{bf:      - Automatic:} You can set up automatic time zone shifting if you 
-include a calculate field in your SurveyCTO form with this expression: 
-{it: format-date-time(${starttime}, '%Y-%b-%e %H:%M:%S')}. This creates a string
-version of the {it:starttime} variable which will not be shifted to the 
-downloader's time zone during export. If you included this calculate field, 
-include its name here, for example {it:ctorezone starttime_string}. This will 
-automatically shift all {it:time/datetime} variables based on the difference between
-the {it:starttime} variable (which is exported in the downloader's time zone) 
-and the string version of starttime (which is exported in the collector's time 
-zone). This option works best if the data collection or downloading takes 
-place in more than one time zone. 
-
+{bf:      - Automatic:} include a {it:calculate} field in your form design that calculates
+the data collector’s time zone at the start time of the survey: {it:format-date-time(${starttime}, '%Y-%b-%e %H:%M:%S')}.
+When exporting data, this field won’t be shifted according to the time zone of the exporting
+computer because all {it:calculate} fields are considered strings, not {it:datetime} or {it:time} fields,
+regardless their content. You can then use this {it:calculate} field in the command to shift all {it:datetime}and {it:time}
+fields to the same time zone of the data collector’s device, e.g., {it:sctorezone starttime_calculate, force}.
+This command will calculate the difference between the exported {it:starttime} and {it:starttime_calculate} fields,
+and shift time zones accordingly.
 
 {* Using -help bcstats- as a template.}{...}
 {synoptset 23 tabbed}{...}
@@ -61,14 +56,14 @@ data in {it:time} and {it:datetime} variables will be overwritten{p_end}
 {title:Description}
 
 {pstd}
-SurveyCTO exports {it:time} and {it:datetime} fields relative to the
-{browse "https://docs.surveycto.com/05-exporting-and-publishing-data/01-overview/09.data-format.html":
-time zone of the exporting computer – not the time zone of the data-collection device}.
-{cmd:sctorezone} is a great tool to shift these fields back to the time zone where
-the data was collected. This command changes the time zones for {it:datetime} fields formatted
-according to the SurveyCTO .do file template, i.e., in %tc format, and
-{it:time} fields using SurveyCTO standard format (e.g. "12:34:56 PM"). Unless 
-the {it: only} or {it:exclude} option is specified, all variables in %tc format 
+SurveyCTO exports {it:datetime} and {it:time} fields relative to the
+{browse "https://docs.surveycto.com/05-exporting-and-publishing-data/01-overview/09.data-format.html": time zone of the exporting computer}
+– not the time zone of the data-collection device}. {cmd:sctorezone} is a great tool
+to shift these fields back to the time zone where the data was collected. This command
+changes the time zones for {it:datetime} fields formatted according to the
+{browse "https://docs.surveycto.com/05-exporting-and-publishing-data/01-overview/11.using-stata.html":SurveyCTO .do file template},
+i.e., in %tc format, and {it:time} fields using SurveyCTO standard format (e.g. "12:34:56 PM").
+Unless the {it: only} or {it:exclude} option is specified, all variables in %tc format 
 and all string variables following SurveyCTO's standard time format will be 
 shifted.
 
