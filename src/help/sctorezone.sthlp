@@ -83,9 +83,9 @@ will be overwritten.
 {opth e:xclude(varlist)} specifies that the time zone should be shifted for 
 all {it:datetime} and {it:time} variables except for those included in the {it:varlist}.
 
-If {it:only} is specified,
-{it:exclude} cannot be specified. If neither are specified, all {it:time} and 
-{it:datetime} variables will be shifted.
+{pstd}
+If {it:only} is specified, {it:exclude} cannot be specified. If neither are specified,
+all {it:time} and {it:datetime} variables will be shifted.
 
 {marker examples}{...}
 {title:Examples}
