@@ -18,7 +18,7 @@ d These commands are developed by the team at SurveyCTO.
 d
 d Requires: Stata version 14
 d
-d Distribution-Date: 20200327
+d Distribution-Date: 20200413
 d
 d Author: SurveyCTO
 d E-mail: support@surveycto.com
@@ -34,3 +34,5 @@ f /help/sctomedia.sthlp
 f /ado/sctoapi.ado
 f /help/sctoapi.sthlp
 f /ado/sctoapi.dlg
+f /ado/sctorezone.ado
+f /help/sctorezone.sthlp
