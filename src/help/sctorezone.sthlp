@@ -19,20 +19,21 @@ shift {ifin}
 {cmd:, force} [{opth o:nly(varlist)} | {opth e:xclude(varlist)}]
 
 {pstd}
-where {it:shift} indicates how to shift your {it:datetime} and/or {it:time} fields.
+The {it:shift} parameters indicates how to shift your {it:datetime} and/or {it:time} fields.
 Shift can be formatted for {cmd:manual} or {cmd:automatic} re-zoning:
 
 
 {pstd}
-{bf:      - Manual:} set the number of hours to shift {it:datetime} and/or {it:time}
+{bf:      - Manual:} set the number of hours to shift {it:datetime} and {it:time}
 variables forwards ({cmd:+}) or backwards ({cmd:-}). For example, {it:sctorezone +4, force}
 or {it:sctorezone -3, force}.
 
 {pstd}
-{bf:      - Automatic:} include a {it:calculate} field in your form design that calculates
+{bf:      - Automatic:} include a {browse "https://docs.surveycto.com/02-designing-forms/01-core-concepts/03zb.field-types-calculate.html":{it:calculate} field}
+in your form design that calculates
 the data collector’s time zone at the start time of the survey: {it:format-date-time(${starttime}, '%Y-%b-%e %H:%M:%S')}.
 When exporting data, this field won’t be shifted because all {it:calculate} fields are considered strings, not {it:datetime} or {it:time} fields,
-regardless their content. You can then use this {it:calculate} field in the command to shift all {it:datetime} and {it:time}
+regardless of their content. You can then use this {it:calculate} field in the command to shift all {it:datetime} and {it:time}
 fields to the same time zone of the data collector’s device, e.g., {it:sctorezone starttime_calculate, force}.
 This command will calculate the difference between the exported {it:starttime} and {it:starttime_calculate} fields,
 and shift time zones accordingly.
