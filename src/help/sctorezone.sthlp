@@ -21,8 +21,6 @@ shift {ifin}
 {pstd}
 The {it:shift} parameters indicates how much to shift your {it:datetime} and/or {it:time} fields.
 Shift can be formatted for {cmd:manual} or {cmd:automatic} re-zoning:
-
-
 {pstd}
 {bf:      - Manual:} set the number of hours to shift {it:datetime} and {it:time}
 variables forwards ({cmd:+}) or backwards ({cmd:-}). For example, {it:sctorezone +5.5, force}
