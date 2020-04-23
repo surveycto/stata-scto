@@ -8,7 +8,6 @@ cap program drop sctorezone
 program sctorezone
 	syntax anything(id="time zone shift or starttime variable" name=shift) [if] [in], force [Only(varlist) | Exclude(varlist)]
 	
-	local shift starttime_calc
  	* break "shifted" into direction (+ or -) and hours
 	
 		// is "shift" in manual or automatic form?
