@@ -44,6 +44,7 @@ and shift time zones accordingly.
 {synoptline}
 {p2coldent:* {opth o:nly(varlist)}}shift time zone {opt only()} for these variables.
 {p_end}
+
 {p2coldent:* {opth e:xclude(varlist)}}shift time zone for all {it:datetime} and {it:time}
 variables, {opt except} for these variables.{p_end}
 {p2coldent:* {bf:force}}the {it:force} option is required as a reminder that 

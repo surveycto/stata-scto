@@ -20,8 +20,8 @@
 	ssc install scto
 	
 	*folder globals
-	global ado 			"$scto_repo/src/ado"
-	global testfolder  	"$scto_repo/testfiles"
+	global ado 		"$scto_repo/src/ado"
+	global testfolder  	"$scto_repo/testfiles/sctostream"
 	
 	*Create the folders needed in the output folder if they do not already exist
 	foreach datafolder in data_1 data_2 data_3 data_4 {
