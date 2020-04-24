@@ -44,7 +44,7 @@ and shift time zones accordingly.
 {synoptline}
 {p2coldent:* {opth o:nly(varlist)}}shift time zone {opt only()} for these variables.
 {p_end}
-{p2coldent:* {opth e:xclude(varlist)}}shift time zone for all {it:time/datetime} 
+{p2coldent:* {opth e:xclude(varlist)}}shift time zone for all {it:datetime} and {it:time} 
 variables, {opt except} for these variables.{p_end}
 {p2coldent:* {bf:force}}the {it:force} option is required as a reminder that 
 data in {it:time} and {it:datetime} variables will be overwritten.{p_end}
@@ -97,7 +97,7 @@ all {it:time} and {it:datetime} variables will be shifted.
 
     {hline}
 {pstd}{cmd: Example 2}{p_end}
-{pstd}{cmd:sctorezone} starttime_str, force
+{pstd}{cmd:sctorezone} starttime_calculate, force
 
 {pstd}In this example, sctorezone automatically shift times of all {it:datetime/time}
 variables according to the string variable {it:starttime_str}, which is a SurveyCTO
