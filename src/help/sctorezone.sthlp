@@ -1,5 +1,5 @@
 {smcl}
-{* *! version 1.0 13APR2020, developed by William Blackmon (wblackmon@poverty-action.org)}{...}
+{* *! version 2.0 24APR2020, developed by William Blackmon (wblackmon@poverty-action.org)}{...}
 {hline}
 help for {hi:sctorezone}
 {hline}
