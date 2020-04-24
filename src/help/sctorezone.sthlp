@@ -107,7 +107,7 @@ all {it:time} and {it:datetime} variables will be shifted.
 {pstd}{cmd:sctorezone} starttime_calculate, force
 
 {pstd}In this example, sctorezone automatically shift times of all {it:datetime} and {it:time}
-variables according to the string variable {it:starttime_str}, which is a SurveyCTO
+variables according to the string variable {it:starttime_calculate}, which is a SurveyCTO
 calculate field with the following calculation expression:
 {it: format-date-time(${starttime}, '%Y-%b-%e %H:%M:%S')}.
 
