@@ -64,7 +64,10 @@ program define sctoapi, rclass
 					scalar `datapoint' = ustrregexs(0)
 					local varname = ustrregexs(1)
 					local value = ustrregexs(2)
-					local value = usubinstr(`"`value'"',`"""',"",.)
+					capture local value = usubinstr(`"`value'"',`"""',"",.)
+					if _rc==132{
+						local value = usubinstr(`value',"`","", .)
+					}
 					cap gen `varname' = ""
 					replace `varname' = `"`value'"' in `i'
 					replace `varname' = "" if `varname' == "null"
