@@ -63,6 +63,7 @@ program define sctoapi, rclass
 				while ustrregexm(`observation',`""([a-zA-Z_][a-zA-Z0-9_]+)":("[^\"]*"|null)"') == 1 {
 					scalar `datapoint' = ustrregexs(0)
 					local varname = ustrregexs(1)
+					local varname = substr("`varname'", 1, 32)
 					local value = ustrregexs(2)
 					capture local value = usubinstr(`"`value'"',`"""',"",.)
 					if _rc==132{
