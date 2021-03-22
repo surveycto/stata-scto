@@ -1,4 +1,4 @@
-*!Version 2.0 27MAR2020 SurveyCTO support@surveycto.com
+*!Version 2.1 22MAR2021 SurveyCTO support@surveycto.com
 
 /* Developed by IPA (Innovations for Poverty Action) and SurveyCTO
   This program downloads SurveyCTO data in JSON format via the API. The data
@@ -44,7 +44,7 @@ program define sctoapi, rclass
 			local filename = "`formid'" + ".json"
 
 			!curl -s "`url'/data/wide/json/`formid'?date=`date'" ///
-				-u `username':`password' ///
+				-u "`username'":"`password'" ///
 				--output "`outputfolder'/`filename'" 
 
 			tempname jsondata observation datapoint	
@@ -63,7 +63,6 @@ program define sctoapi, rclass
 				while ustrregexm(`observation',`""([a-zA-Z_][a-zA-Z0-9_]+)":("[^\"]*"|null)"') == 1 {
 					scalar `datapoint' = ustrregexs(0)
 					local varname = ustrregexs(1)
-					local varname = substr("`varname'", 1, 32)
 					local value = ustrregexs(2)
 					capture local value = usubinstr(`"`value'"',`"""',"",.)
 					if _rc==132{
@@ -117,7 +116,7 @@ program define sctoapi, rclass
 			local filename = "`formid'" + ".json"
 
 				!curl -s "`url'/data/wide/json/`formid'?date=`date'" ///
-					-u `username':`password' ///
+					-u "`username'":"`password'" ///
 					-F "private_key=@`key'" ///
 					--output "`outputfolder'/`filename'"
 
@@ -241,7 +240,7 @@ program define sctoapi_media, rclass
 			cap confirm file "`path'/`file'/nul"
 			if _rc {
 				scalar PROCEXEC_HIDDEN = 1
-				!curl -s `url' -u `username':`password' --output `output'
+				!curl -s `url' -u "`username'":"`password'" --output `output'
 				scalar pid = r(pid)
 			}
 		}
@@ -250,7 +249,7 @@ program define sctoapi_media, rclass
 			cap confirm file "`path'/`file'"
 			if _rc {
 				scalar PROCEXEC_HIDDEN = 1
-				!curl -s `url' -u `username':`password' --output `output'
+				!curl -s `url' -u "`username'":"`password'" --output `output'
 				scalar pid = r(pid)
 			}
 		}
@@ -279,7 +278,7 @@ program define sctoapi_media, rclass
 			cap confirm file "`output'/nul"
 				if _rc {
 					scalar PROCEXEC_HIDDEN = 1
-					!curl -s `url' -u `username':`password' -F "private_key=@`key'" --output `output'
+					!curl -s `url' -u "`username'":"`password'" -F "private_key=@`key'" --output `output'
 					scalar pid = r(pid)
 				}
 		}
@@ -288,7 +287,7 @@ program define sctoapi_media, rclass
 			cap confirm file "`output'"
 				if _rc {
 					scalar PROCEXEC_HIDDEN = 1
-					!curl -s "`url'" -u `username':`password' -F "private_key=@`key'" --output `output'
+					!curl -s "`url'" -u "`username'":"`password'" -F "private_key=@`key'" --output `output'
 					scalar pid = r(pid)
 				}
 		}
