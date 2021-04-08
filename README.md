@@ -13,7 +13,7 @@ This Stata package includes four commands related to processing data outputted f
 * **sctorezone** - shifts time zones of *time* and *datetime* fields collected by SurveyCTO and formatted by SurveyCTO .do file templates.
 
 ## Installation
-This package requires Stata 13 or newer (**sctoapi** requires Stata 14 or newer).
+This package requires Stata 13 or newer (**sctoapi** requires Stata 14 or newer. If you're using a Mac, the _sctoapi dialog box_ requires Stata 16 or newer).
 
 The easiest way to install this package of commands and keep it up to date is to type `ssc install scto` in Stata. Keep the files up to date by running `adoupdate` regularly, and follow the instructions if any of your installed packages are out of date.
 
