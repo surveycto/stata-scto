@@ -55,6 +55,7 @@ program define sctoapi, rclass
 			noisily di ""
 			noisily di "Import dataset..."
 
+			drop _all
 			local i 0
 			while ustrregexm(`jsondata',`"\{([^\}]+)"') == 1 {
 				set obs `++i'
@@ -128,6 +129,7 @@ program define sctoapi, rclass
 			noisily di ""
 			noisily di "Import dataset..."
 
+			drop _all
 			local i 0
 			while ustrregexm(`jsondata',`"\{([^\}]+)"') == 1 {
 				set obs `++i'
